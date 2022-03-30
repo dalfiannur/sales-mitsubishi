@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@faker-js/faker': ^6.1.1
   '@types/mapbox-gl': ^2.6.3
   '@types/node': ^17.0.23
   '@vitejs/plugin-vue': ^2.2.0
@@ -8,6 +9,7 @@ specifiers:
   gsap: ^3.9.1
   mapbox-gl: ^2.7.1
   postcss: ^8.4.12
+  sass: ^1.49.9
   tailwindcss: ^3.0.23
   typescript: ^4.5.4
   vite: ^2.8.0
@@ -16,12 +18,14 @@ specifiers:
   vue-tsc: ^0.29.8
 
 dependencies:
+  '@faker-js/faker': 6.1.1
   '@types/mapbox-gl': 2.6.3
   '@types/node': 17.0.23
   autoprefixer: 10.4.4_postcss@8.4.12
   gsap: 3.9.1
   mapbox-gl: 2.7.1
   postcss: 8.4.12
+  sass: 1.49.9
   tailwindcss: 3.0.23_autoprefixer@10.4.4
   vue: 3.2.31
   vue-router: 4.0.14_vue@3.2.31
@@ -29,7 +33,7 @@ dependencies:
 devDependencies:
   '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
   typescript: 4.6.3
-  vite: 2.8.6
+  vite: 2.8.6_sass@1.49.9
   vue-tsc: 0.29.8_typescript@4.6.3
 
 packages:
@@ -82,6 +86,11 @@ packages:
   /@emmetio/scanner/1.0.0:
     resolution: {integrity: sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==}
     dev: true
+
+  /@faker-js/faker/6.1.1:
+    resolution: {integrity: sha512-8yq1LJVGn4GY06riLddIU1LbJm15yjt46hjfkpWNpH/mqdciPOBVzicKOJxzQNrGgVHVBxcdm7sgwjI/Y19MYw==}
+    engines: {node: '>=14.0.0', npm: '>=7.0.0'}
+    dev: false
 
   /@mapbox/geojson-rewind/0.5.1:
     resolution: {integrity: sha512-eL7fMmfTBKjrb+VFHXCGv9Ot0zc3C0U+CwXo1IrP+EPwDczLoXv34Tgq3y+2mPSFNVUXgU42ILWJTC7145KPTA==}
@@ -173,7 +182,7 @@ packages:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.8.6
+      vite: 2.8.6_sass@1.49.9
       vue: 3.2.31
     dev: true
 
@@ -957,6 +966,10 @@ packages:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
     dev: false
 
+  /immutable/4.0.0:
+    resolution: {integrity: sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==}
+    dev: false
+
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -1413,6 +1426,16 @@ packages:
     resolution: {integrity: sha1-P4Yt+pGrdmsUiF700BEkv9oHT7Q=}
     dev: false
 
+  /sass/1.49.9:
+    resolution: {integrity: sha512-YlYWkkHP9fbwaFRZQRXgDi3mXZShslVmmo+FVK3kHLUELHHEYrCmL1x6IUjC7wLS6VuJSAFXRQS/DxdsC4xL1A==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.0.0
+      source-map-js: 1.0.2
+    dev: false
+
   /semver/7.3.5:
     resolution: {integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==}
     engines: {node: '>=10'}
@@ -1525,7 +1548,7 @@ packages:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
     dev: false
 
-  /vite/2.8.6:
+  /vite/2.8.6_sass@1.49.9:
     resolution: {integrity: sha512-e4H0QpludOVKkmOsRyqQ7LTcMUDF3mcgyNU4lmi0B5JUbe0ZxeBBl8VoZ8Y6Rfn9eFKYtdXNPcYK97ZwH+K2ug==}
     engines: {node: '>=12.2.0'}
     hasBin: true
@@ -1545,6 +1568,7 @@ packages:
       postcss: 8.4.12
       resolve: 1.22.0
       rollup: 2.70.1
+      sass: 1.49.9
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

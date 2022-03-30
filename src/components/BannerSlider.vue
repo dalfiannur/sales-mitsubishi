@@ -1,143 +1,137 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue'
-import { gsap } from 'gsap'
+import { onMounted, ref } from "vue";
+import useGetBanners from "../composable/useGetBanners";
 
-const items = [
-    'https://images.unsplash.com/photo-1611396058741-1d570a4fcf95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    'https://images.unsplash.com/photo-1611396058754-a6b2562f0602?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    'https://images.unsplash.com/photo-1596429924638-d1f8a252df7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1467&q=80',
-    'https://images.unsplash.com/photo-1592399438478-4d4e2664a323?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    'https://images.unsplash.com/photo-1611023924323-1e7e18f90c6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    // 'https://images.unsplash.com/photo-1592399438478-4d4e2664a323?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-]
+const { data: items } = useGetBanners();
+const current = ref<number>(0);
+const selected = ref<number | null>(null);
+const status = ref<string>("enter");
 
-const run = (targets: Element[], width: number) => {
-    const fullWidth = width * 3
-    gsap.timeline()
-        .to(targets[0], {
-            width: fullWidth,
-            delay: (0 + 3) * 1,
-            duration: 1
-        })
-        .to(targets[0], {
-            width: width,
-            duration: 1,
-            delay: 2
-        })
-        .to(targets[1], {
-            width: fullWidth,
-            duration: 1,
-            delay: 1
-        })
-        .to(targets[1], {
-            width: width,
-            delay: 2,
-            duration: 1
-        })
-        .to(targets[2], {
-            width: fullWidth,
-            delay: 1,
-            duration: 1,
-        })
-        .to(targets[2], {
-            width: width,
-            delay: 2,
-            duration: 1
-        })
-        .to(targets[3], {
-            width: fullWidth,
-            delay: 1,
-            duration: 1
-        })
-        .to(targets[3], {
-            width: width,
-            delay: 2,
-            duration: 1
-        })
-        .to(targets[4], {
-            width: fullWidth,
-            delay: 1,
-            duration: 1
-        })
-        .to(targets[4], {
-            width: width,
-            delay: 2,
-            duration: 1
-        })
+let run = true;
+let runners: NodeJS.Timer[] = [];
 
-    gsap.timeline()
-        .to(targets, {
-            x: -width,
-            delay: 13,
-            duration: 1
-        })
-        .to(targets, {
-            x: 0,
-            delay: 2,
-            duration: 1
-        })
-        .to(targets, {
-            x: -(width * 2),
-            duration: 1,
-            delay: 1
-        })
-        .to(targets, {
-            x: 0,
-            duration: 1,
-            delay: 2
-        })
-        .to(targets, {
-            x: -(width * 2),
-            duration: 1,
-            delay: 1
-        })
-        .to(targets, {
-            x: 0,
-            duration: 1,
-            delay: 2
-        })
-}
+const createRunner = () => {
+  runners.length = 0;
+  if (run) {
+    status.value = "enter";
+
+    const r1 = setTimeout(() => {
+      status.value = "enter-active";
+    }, 1000);
+
+    const r2 = setTimeout(() => {
+      status.value = "leave";
+    }, 4000);
+
+    const r3 = setTimeout(() => {
+      status.value = "leave-active";
+    }, 4500);
+
+    const r4 = setTimeout(() => {
+      if (current.value < 4) {
+        current.value = current.value + 1;
+      } else {
+        current.value = 0;
+      }
+    }, 5500);
+
+    const r5 = setTimeout(() => {
+      createRunner();
+    }, 6000);
+
+    runners.push(...[r1, r2, r3, r4, r5]);
+  }
+};
+const onClick = (index: number) => {
+  runners.every((item) => {
+    clearTimeout(item);
+  });
+
+  if (current.value === index) {
+    status.value = "leave";
+  } else if (selected.value === null) {
+    selected.value = index;
+    run = false;
+  } else if (selected.value === index) {
+    selected.value = null;
+    run = true;
+    createRunner();
+  }
+};
 
 onMounted(() => {
-    const width = window.innerWidth
-
-    const targets: Element[] = gsap.utils.toArray('.slide-item')
-
-    let toTop = false;
-
-    gsap.set(targets, { width: width / 5 })
-
-    for (let i = 0; i < targets.length; i++) {
-        gsap.fromTo(targets[i], {
-            yPercent: -100
-        }, {
-            yPercent: 0,
-            duration: 1,
-            delay: i * .2
-        })
-        toTop = !toTop
-    }
-
-    run(targets, width / 5)
-
-    setInterval(() => {
-        run(targets, width / 5)
-    }, 1000 * 25)
-
-})
+  createRunner();
+});
 </script>
 
 <template>
-    <div class="h-[700px] overflow-hidden">
-        <div  class="relative flex w-full h-full overflow-hidden">
-            <img
-                v-for="(item, index) in items"
-                :key="item"
-                class="object-cover h-full slide-item"
-                :src="item"
-                :alt="item"
-            />
-            <div class="absolute w-full h-full bg-black bg-opacity-30" />
-        </div>
+  <div class="banner__wrapper">
+    <div
+      v-for="(item, index) in items"
+      :key="index"
+      class="banner__item"
+      :class="{
+        'banner-enter': index === current && status === 'enter',
+        'banner-enter-active': index === current && status === 'enter-active',
+        'banner-leave': index === current && status === 'leave',
+        'banner-selected': index === selected,
+      }"
+      :data-id="index"
+    >
+      <img
+        class="object-cover w-full h-full cursor-pointer"
+        :src="item.source"
+        :alt="item.source"
+        @click="onClick(index)"
+      />
     </div>
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.banner {
+  &__wrapper {
+    position: relative;
+    height: 590px;
+    width: 100%;
+  }
+
+  &__item {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    z-index: 1;
+    transition: all 1s;
+  }
+
+  @for $i from 0 through 4 {
+    &__item[data-id="#{$i}"] {
+      left: $i * 20%;
+    }
+  }
+
+  &-enter {
+    z-index: 2 !important;
+  }
+
+  &-enter-active {
+    z-index: 2 !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+
+  &-leave {
+    z-index: 2 !important;
+  }
+
+  &-leave-active {
+    z-index: 2 !important;
+  }
+
+  &-selected {
+    z-index: 3 !important;
+    width: 100% !important;
+    left: 0 !important;
+  }
+}
+</style>

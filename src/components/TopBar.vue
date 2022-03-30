@@ -14,8 +14,8 @@ const navigatorLinks: NavigatorLink[] = [
         path: '/produk'
     },
     {
-        text: 'Simulator Kredit',
-        path: '/simulasi'
+        text: 'Ajukan Kredit',
+        path: '/ajukan-kredit'
     },
     {
         text: 'Tukar Tambah',
