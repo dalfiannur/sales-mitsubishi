@@ -23,7 +23,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="absolute left-0 w-2/3 h-[700px]">
+  <div class="relative md:absolute md:left-0 w-full md:w-2/3 h-[700px]">
     <Transition name="slide-fade" v-for="(item, index) in items">
       <img
         v-show="current === index"

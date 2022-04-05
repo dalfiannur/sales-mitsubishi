@@ -1,4 +1,4 @@
-FROM httpd:latest-alpine
+FROM httpd:alpine
 
 WORKDIR /usr/local/apache2/htdocs
 

@@ -2,13 +2,17 @@
 import { reactive } from 'vue'
 
 type Prop = {
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    tag?: 'button' | 'a';
+    href?: string;
+    target?: string;
 }
 const props = withDefaults(defineProps<Prop>(), {
-    size: 'md'
+    size: 'md',
+    tag: 'button'
 })
 
-const { size } = props
+const { size, tag, href, target } = props
 
 const classes = reactive({
     'px-2 py-2 text-sm': size === 'sm',
@@ -18,9 +22,15 @@ const classes = reactive({
 </script>
 
 <template>
-    <button class="block rounded btn-grad" :class="classes">
+    <component
+        :is="tag"
+        class="block rounded btn-grad"
+        :class="classes"
+        :href="href"
+        :target="target"
+    >
         <slot />
-    </button>
+    </component>
 </template>
 
 <style>

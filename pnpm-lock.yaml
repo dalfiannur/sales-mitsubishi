@@ -6,6 +6,7 @@ specifiers:
   '@types/node': ^17.0.23
   '@vitejs/plugin-vue': ^2.2.0
   autoprefixer: ^10.4.4
+  axios: ^0.26.1
   gsap: ^3.9.1
   mapbox-gl: ^2.7.1
   postcss: ^8.4.12
@@ -22,6 +23,7 @@ dependencies:
   '@types/mapbox-gl': 2.6.3
   '@types/node': 17.0.23
   autoprefixer: 10.4.4_postcss@8.4.12
+  axios: 0.26.1
   gsap: 3.9.1
   mapbox-gl: 2.7.1
   postcss: 8.4.12
@@ -395,6 +397,14 @@ packages:
       picocolors: 1.0.0
       postcss: 8.4.12
       postcss-value-parser: 4.2.0
+    dev: false
+
+  /axios/0.26.1:
+    resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
+    dependencies:
+      follow-redirects: 1.14.9
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /babel-walk/3.0.0-canary-5:
@@ -866,6 +876,16 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       to-regex-range: 5.0.1
+    dev: false
+
+  /follow-redirects/1.14.9:
+    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: false
 
   /fraction.js/4.2.0:

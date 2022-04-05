@@ -65,7 +65,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="banner__wrapper">
+  <div class="relative hidden banner__wrapper md:block">
     <div
       v-for="(item, index) in items"
       :key="index"
@@ -91,7 +91,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 .banner {
   &__wrapper {
-    position: relative;
     height: 590px;
     width: 100%;
   }

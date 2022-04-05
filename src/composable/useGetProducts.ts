@@ -1,4 +1,6 @@
 import { ref, onMounted } from 'vue'
+import { Product } from '../typings/Product';
+import useHttp from './useAxios';
 
 type Options = {
     page: number;
@@ -6,13 +8,18 @@ type Options = {
 }
 
 export default function ({ page, perPage }: Options) {
-    const data = ref<any[]>([])
+    const data = ref<Product[]>([])
+    const http = useHttp()
 
     onMounted(() => {
-        fetch("https://60447203c0194f00170bbc63.mockapi.io/v1/products")
-            .then((response) => response.json())
+        const query = new URLSearchParams()
+        query.set('page', page.toString())
+        query.set('per_page', perPage.toString())
+
+        http.get("/products?" + query.toString())
+            .then((response) => response.data)
             .then((result) => {
-                data.value = result.slice(page - 1, page * perPage)
+                data.value = result.data
             })
     })
 

@@ -43,7 +43,10 @@ module.exports = {
       pink: colors.pink,
       rose: colors.rose,
       'red-ruby': 'rgb(153, 0, 0)',
-      'red-ruby-light': 'rgb(173, 0, 0)'
+      'red-ruby-light': 'rgb(173, 0, 0)',
+      primary: '#8d99ae',
+      secondary: '#2b2d42',
+      accent: '#edf2f4'
     }),
     columns: {
       auto: 'auto',
