@@ -28,7 +28,7 @@ onMounted(() => {
       <img
         v-show="current === index"
         class="h-full w-full object-cover absolute top-0 left-0 z-[1]"
-        :src="item.image"
+        :src="item.imageUrl"
       />
     </Transition>
   </div>

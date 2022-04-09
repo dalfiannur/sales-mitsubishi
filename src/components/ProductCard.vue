@@ -45,7 +45,9 @@ const transmissions = computed(() =>
         <div>
           <div class="flex flex-col items-end">
             <div class="text-xs font-bold">Mulai Dari</div>
-            <div class="text-lg font-bold">Rp. {{ minPrice }}</div>
+            <div class="text-lg font-bold">
+              Rp. {{ Intl.NumberFormat("ID-id").format(minPrice) }}
+            </div>
           </div>
 
           <div class="mt-5">

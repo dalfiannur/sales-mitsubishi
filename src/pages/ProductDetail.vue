@@ -1,14 +1,19 @@
 <script lang="ts" setup>
 import { computed, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
-import useGetProductBySlug from "../composable/useGetProductBySlug";
 import useMeta from "../composable/useMeta";
 import Button from "../components/Button.vue";
+import useEntityGetter from "../composable/useEntityGetter";
+import { Product } from "../typings/Product";
 
 const slug = ref<string>("");
 const selectedImage = ref<string>("");
 const route = useRoute();
-const { fetcher, data } = useGetProductBySlug();
+
+const { fetcher, data } = useEntityGetter<Product>(route.params.slug as string, {
+  path: "products",
+  autoFetch: true,
+});
 
 const generateWhatsappText = (type: any) => {
   const query = new URLSearchParams();
@@ -43,7 +48,6 @@ watch(data, (val) => {
 <template>
   <div v-if="data" class="flex justify-center py-5 bg-primary">
     <div class="w-full max-w-screen-lg">
-      <h1 class="font-bold text-3xl text-center md:text-left">{{ data.name }}</h1>
       <div class="mt-5">
         <div class="flex flex-col md:flex-row gap-10">
           <div class="flex-1">
@@ -76,7 +80,9 @@ watch(data, (val) => {
               <p class="text-xl font-bold text-red-500">{{ type.name }}</p>
               <div class="flex flex-col items-end">
                 <p class="text-xs mt-2">Mulai dari</p>
-                <p class="text-2xl font-bold text-red-500">Rp. {{ type.price }}</p>
+                <p class="text-2xl font-bold text-red-500">
+                  Rp. {{ Intl.NumberFormat("ID-id").format(type.price) }}
+                </p>
               </div>
               <div class="flex justify-between mt-4">
                 <p>{{ type.transmission }}</p>
@@ -89,7 +95,10 @@ watch(data, (val) => {
           </div>
 
           <div class="flex-1">
-            <p class="indent-8">{{ data.description }}</p>
+            <h1 class="font-bold text-3xl text-center md:text-left text-accent">
+              {{ data.name }}
+            </h1>
+            <p class="indent-8 mt-10">{{ data.description }}</p>
           </div>
         </div>
       </div>

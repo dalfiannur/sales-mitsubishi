@@ -17,7 +17,7 @@ const { data } = defineProps<Prop>();
         :href="`/berita/${data.slug}`"
         @click.prevent="$router.push('/berita/' + data.slug)"
       >
-        <img class="object-cover w-full h-full" :src="data.thumbnail" />
+        <img class="object-cover w-full h-full" :src="data.thumbnailUrl" />
       </a>
     </div>
     <div class="p-5">

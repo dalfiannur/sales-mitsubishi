@@ -1,31 +1,38 @@
 <script setup lang="ts">
 import useMeta from "../composable/useMeta";
-import useGetProducts from "../composable/useGetProducts";
 import BannerSlider from "../components/BannerSlider.vue";
 import Button from "../components/Button.vue";
 import ProductCard from "../components/ProductCard.vue";
 import Map from "../components/Map.vue";
-import Testimonial from "../components/Testimonial.vue";
+import TestimonialCard from "../components/Testimonial.vue";
 import NewsCard from "../components/NewsCard.vue";
-import useGetNews from "../composable/useGetNews";
 import TestimonialImage from "../components/TestimonialImage.vue";
-import useGetTestimonials from "../composable/useGetTestimonials";
+import usePaginationGetter from "../composable/usePaginationGetter";
+import { Product } from "../typings/Product";
+import { News } from "../typings/News";
+import { Testimonial } from "../typings/Testimonial";
 
 useMeta({
   title: "Homepage",
 });
 
-const { data: products } = useGetProducts({
-  page: 1,
+const { data: products } = usePaginationGetter<Product>({
+  path: "products",
   perPage: 3,
+  autoFetch: true,
 });
 
-const { data: newsList } = useGetNews({
-  page: 1,
+const { data: newsList } = usePaginationGetter<News>({
+  path: "news",
   perPage: 3,
+  autoFetch: true,
 });
 
-const { data: testimonials } = useGetTestimonials();
+const { data: testimonials } = usePaginationGetter<Testimonial>({
+  path: "testimonials",
+  perPage: 5,
+  autoFetch: true,
+});
 </script>
 
 <template>
@@ -64,7 +71,7 @@ const { data: testimonials } = useGetTestimonials();
         class="flex flex-col items-center justify-between w-full max-w-screen-lg md:flex-row"
       >
         <div class="w-full md:w-[600px] px-4 md:px-0">
-          <div class="text-xl font-bold text-primary">Promo</div>
+          <div class="text-xl font-bold text-red-500">Promo</div>
           <div class="text-6xl font-bold text-white">
             Waktunya berkendara dengan mobil idamanmu.
           </div>
@@ -94,7 +101,7 @@ const { data: testimonials } = useGetTestimonials();
       <div class="w-full max-w-screen-lg z-[2] px-4 md:px-0">
         <div class="text-4xl font-bold text-center text-white">Berita</div>
         <div class="grid grid-cols-1 gap-10 mt-10 md:grid-cols-3">
-          <NewsCard v-for="item in newsList" :key="item" :data="item" />
+          <NewsCard v-for="item in newsList" :key="item.slug" :data="item" />
         </div>
       </div>
     </div>
@@ -119,7 +126,7 @@ const { data: testimonials } = useGetTestimonials();
       >
         <div class="flex justify-end flex-1 max-w-screen-lg">
           <div class="flex items-center justify-center w-full px-4 md:w-1/3 md:px-0">
-            <Testimonial :items="testimonials" />
+            <TestimonialCard :items="testimonials" />
           </div>
         </div>
       </div>

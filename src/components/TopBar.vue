@@ -2,7 +2,7 @@
 import { onMounted, ref } from "vue";
 import Button from "./Button.vue";
 
-const show = ref<boolean>(false);
+const show = ref<boolean>(true);
 
 type NavigatorLink = {
   text: string;
@@ -19,12 +19,8 @@ const navigatorLinks: NavigatorLink[] = [
     path: "/produk",
   },
   {
-    text: "Ajukan Kredit",
+    text: "Pengajuan Kredit",
     path: "/ajukan-kredit",
-  },
-  {
-    text: "Tukar Tambah",
-    path: "/tukar-tambah",
   },
   {
     text: "Berita",
@@ -63,7 +59,7 @@ onMounted(() => {
                 <a
                   :href="link.path"
                   @click.prevent="$router.push(link.path)"
-                  class="font-bold text-white"
+                  class="font-semibold text-white"
                   >{{ link.text }}</a
                 >
               </li>

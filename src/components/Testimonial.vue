@@ -66,11 +66,14 @@ onUpdated(() => {
       <div class="mt-10 font-bold text-gray-500">{{ item.content }}</div>
       <div class="relative flex gap-10 mt-10">
         <div>
-          <img class="object-cover w-[80px] h-[80px] rounded-full" :src="item.avatar" />
+          <img
+            class="object-cover w-[80px] h-[80px] rounded-full"
+            :src="item.avatarUrl"
+          />
         </div>
         <div class="flex flex-col justify-center">
           <p class="text-xl font-bold text-red-500">{{ item.name }}</p>
-          <p class="text-sm font-bold text-yellow-500">{{ item.name }}</p>
+          <p class="text-sm font-bold text-yellow-500">{{ item.position }}</p>
         </div>
         <div
           class="absolute font-serif text-[100px] top-0 leading-[0] right-0 text-red-500"
