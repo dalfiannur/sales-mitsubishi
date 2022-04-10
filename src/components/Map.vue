@@ -26,6 +26,6 @@ onMounted(() => {
 
 <template>
   <div class="bg-white">
-    <div id="map" class="h-[590px] w-full map" />
+    <div id="map" class="h-[360px] w-full map" />
   </div>
 </template>

@@ -131,17 +131,6 @@ const loadMoreProduct = () => {
       </div>
     </div>
 
-    <div class="relative flex justify-end">
-      <div
-        class="absolute z-[2] top-0 left-0 w-full h-full bg-primary clip-2 hidden md:block"
-      >
-        <img src="/img/bg-1.jpeg" class="object-cover w-2/3 h-full bg-left" />
-      </div>
-      <div class="w-full md:w-2/3 static z-[1]">
-        <Map />
-      </div>
-    </div>
-
     <div class="bg-primary w-full py-10">
       <h5 class="text-4xl font-bold text-center">Testimoni Pelanggan</h5>
       <div class="flex justify-center gap-5 mt-10">
@@ -162,6 +151,12 @@ const loadMoreProduct = () => {
             </template>
           </Carousel>
         </div>
+      </div>
+    </div>
+
+    <div class="relative flex justify-end bg-white">
+      <div class="w-full static z-[1]">
+        <Map />
       </div>
     </div>
   </div>
