@@ -29,11 +29,11 @@ const transmissions = computed(() =>
 
 <template>
   <div
-    class="overflow-hidden bg-primary rounded shadow-lg hover:bg-gray-200 hover:shadow-xl"
+    class="overflow-hidden bg-primary rounded shadow-lg hover:bg-gray-200 hover:shadow-xl h-[500px]"
   >
     <div class>
       <img
-        class="object-cover w-full cursor-pointer aspect-video"
+        class="object-cover w-full cursor-pointer aspect-square"
         :src="data.images[0]?.source_url"
         @click="$router.push('/produk/' + data.slug)"
       />
@@ -43,14 +43,21 @@ const transmissions = computed(() =>
       <h6 class="py-5 text-xl font-bold text-center">{{ data.name }}</h6>
       <div class="px-5 pb-5">
         <div>
-          <div class="flex flex-col items-end">
-            <div class="text-xs font-bold">Mulai Dari</div>
-            <div class="text-lg font-bold">
-              Rp. {{ Intl.NumberFormat("ID-id").format(minPrice) }}
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="text-xs font-bold text-left">Mulai Dari</div>
+              <div class="text-lg font-bold">
+                Rp. {{ Intl.NumberFormat("ID-id").format(minPrice) }}
+              </div>
+            </div>
+            <div>
+              <Button size="sm" @click="$router.push('/produk/' + data.slug)"
+                >Lihat Detail</Button
+              >
             </div>
           </div>
 
-          <div class="mt-5">
+          <!-- <div class="mt-5">
             <div class="flex items-center gap-2 mt-2 text-xs font-semibold">
               <div>
                 <img src="/img/gas-station.png" class="w-6 h-6" />
@@ -67,10 +74,7 @@ const transmissions = computed(() =>
                 <p>{{ transmissions }}</p>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="flex justify-end mt-5">
-          <Button size="sm" @click="$router.push('/produk/' + data.slug)">Detail</Button>
+          </div>-->
         </div>
       </div>
     </div>

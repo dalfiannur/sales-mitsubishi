@@ -16,11 +16,17 @@ export default function usePaginationGetter<T>(option: Option) {
   const isLoading = ref<boolean>(false)
   const isError = ref<boolean>(false)
   const error = ref<Error>()
+  const order = ref<{ by: string, asc: boolean }>({
+    by: 'created_at',
+    asc: false
+  })
 
   const getQueries = () => {
     const query = new URLSearchParams()
     query.set("page", currentPage.value.toString())
     query.set("perPage", perPage.value.toString())
+    query.set('orderBy', order.value.by)
+    query.set('orderAsc', order.value.asc ? 'true' : 'false')
     return query.toString()
   }
 
@@ -30,6 +36,11 @@ export default function usePaginationGetter<T>(option: Option) {
 
   const setPerPage = (page: number) => {
     perPage.value = page
+  }
+
+  const setOrder = (by: string, asc: boolean) => {
+    order.value.by = by
+    order.value.asc = asc
   }
 
   const setTotalPage = ({ total, per_page }: { total: number, per_page: number }) => {
@@ -78,7 +89,7 @@ export default function usePaginationGetter<T>(option: Option) {
     }
   })
 
-  watch([currentPage, perPage], () => {
+  watch([currentPage, perPage, order], () => {
     fetcher()
   })
 
@@ -89,6 +100,7 @@ export default function usePaginationGetter<T>(option: Option) {
     fetcher,
     setPage,
     setPerPage,
+    setOrder,
     onSuccess,
     onError,
   }
