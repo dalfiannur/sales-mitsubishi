@@ -1,23 +1,42 @@
 <script setup lang="ts">
 import useMeta from "../composable/useMeta";
-import BannerSlider from "../components/BannerSlider.vue";
 import Button from "../components/Button.vue";
 import ProductCard from "../components/ProductCard.vue";
 import Map from "../components/Map.vue";
 import TestimonialCard from "../components/Testimonial.vue";
 import NewsCard from "../components/NewsCard.vue";
-import TestimonialImage from "../components/TestimonialImage.vue";
 import usePaginationGetter from "../composable/usePaginationGetter";
 import { Product } from "../typings/Product";
 import { News } from "../typings/News";
 import { Testimonial } from "../typings/Testimonial";
 import { ref } from "vue";
+//@ts-ignore
+import { Carousel, Navigation, Slide, Pagination } from "vue3-carousel";
+import "vue3-carousel/dist/carousel.css";
 
 useMeta({
   title: "Homepage",
 });
 
 const productPerPage = ref<number>(3);
+const carouselOptions = {
+  settings: {
+    itemsToShow: 1,
+    snapAlign: "center",
+  },
+  breakpoints: {
+    // 700px and up
+    700: {
+      itemsToShow: 3.5,
+      snapAlign: "center",
+    },
+    // 1024 and up
+    1024: {
+      itemsToShow: 3,
+      snapAlign: "center",
+    },
+  },
+};
 
 const { data: products, setPerPage } = usePaginationGetter<Product>({
   path: "products",
@@ -33,7 +52,7 @@ const { data: newsList } = usePaginationGetter<News>({
 
 const { data: testimonials } = usePaginationGetter<Testimonial>({
   path: "testimonials",
-  perPage: 5,
+  perPage: 10,
   autoFetch: true,
 });
 
@@ -123,17 +142,25 @@ const loadMoreProduct = () => {
       </div>
     </div>
 
-    <div
-      class="relative flex flex-col md:flex-row justify-end overflow-hidden bg-primary w-full h-fit md:h-[700px]"
-    >
-      <TestimonialImage :items="testimonials" />
-      <div
-        class="flex justify-center w-full h-full clip-1 bg-primary relative md:absolute z-[2]"
-      >
-        <div class="flex justify-end flex-1 max-w-screen-lg">
-          <div class="flex items-center justify-center w-full px-4 md:w-1/3 md:px-0">
-            <TestimonialCard :items="testimonials" />
-          </div>
+    <div class="bg-primary w-full py-10">
+      <h5 class="text-4xl font-bold text-center">Testimoni Pelanggan</h5>
+      <div class="flex justify-center gap-5 mt-10">
+        <div class="flex-1 max-w-screen-xl px-5">
+          <Carousel
+            :settings="carouselOptions.settings"
+            :breakpoints="carouselOptions.breakpoints"
+          >
+            <Slide v-for="item in testimonials" :key="item.name">
+              <div class="carousel__item">
+                <TestimonialCard class="absolute top-0 h-full w-[90%]" :item="item" />
+              </div>
+            </Slide>
+
+            <template #addons>
+              <Navigation />
+              <Pagination />
+            </template>
+          </Carousel>
         </div>
       </div>
     </div>
@@ -141,6 +168,24 @@ const loadMoreProduct = () => {
 </template>
 
 <style scoped>
+.carousel__item {
+  min-height: 200px;
+  width: 100%;
+  padding-top: 100%;
+  font-size: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel__slide {
+  padding: 10px;
+}
+.carousel__prev,
+.carousel__next {
+  box-sizing: content-box;
+  border: 5px solid white;
+}
 .clip-1 {
   clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 40% 100%);
 }

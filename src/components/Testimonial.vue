@@ -1,61 +1,24 @@
 <script setup lang="ts">
-import { onUpdated, toRefs } from "vue";
-import { gsap } from "gsap";
+import { toRefs } from "vue";
 import { Testimonial } from "../typings/Testimonial";
 
 interface Prop {
-  items: Testimonial[];
+  item: Testimonial;
 }
 
 const props = defineProps<Prop>();
 
-const { items } = toRefs(props);
-
-const loop = (targets: (index: number) => Element, i = 0) => {
-  gsap
-    .timeline()
-    .fromTo(
-      targets(i),
-      {
-        xPercent: 102,
-        opacity: 1,
-      },
-      {
-        xPercent: 0,
-        duration: 1,
-      }
-    )
-    .to(targets(i), {
-      opacity: 0,
-      duration: 1,
-      delay: 4,
-      onComplete() {
-        loop(targets, i + 1);
-      },
-    });
-};
-
-onUpdated(() => {
-  const targets = gsap.utils.wrap<Element>(gsap.utils.toArray(".testimonial-item"));
-  gsap.set(".testimonial-item", {
-    xPercent: 102,
-  });
-
-  loop(targets);
-});
+const { item } = toRefs(props);
 </script>
 
 <template>
-  <div class="relative w-full h-[700px] overflow-hidden">
-    <div class="pb-10 mt-32">
-      <h6 class="text-lg text-yellow-400">Testimonial</h6>
-      <h5 class="text-4xl font-bold text-white">What They Say</h5>
-    </div>
-    <div
-      class="absolute w-full p-5 bg-white shadow rounded-xl testimonial-item"
-      v-for="item in items"
-      :key="item.name"
-    >
+  <div
+    class="border shadow-lg rounded-xl testimonial-item overflow-hidden"
+    :style="{
+      backgroundImage: `url(${item.imageUrl})`,
+    }"
+  >
+    <div class="flex flex-col justify-between w-full h-full p-5 bg-black bg-opacity-60">
       <div class="flex gap-2">
         <div
           class="w-6 h-6 bg-yellow-500 star"
@@ -63,7 +26,7 @@ onUpdated(() => {
           :key="star"
         />
       </div>
-      <div class="mt-10 font-bold text-gray-500">{{ item.content }}</div>
+      <div class="mt-10 font-bold text-white">{{ item.content }}</div>
       <div class="relative flex gap-10 mt-10">
         <div>
           <img

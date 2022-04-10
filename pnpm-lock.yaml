@@ -17,6 +17,7 @@ specifiers:
   vue: ^3.2.25
   vue-router: ^4.0.14
   vue-tsc: ^0.29.8
+  vue3-carousel: ^0.1.38
 
 dependencies:
   '@faker-js/faker': 6.1.1
@@ -31,6 +32,7 @@ dependencies:
   tailwindcss: 3.0.23_autoprefixer@10.4.4
   vue: 3.2.31
   vue-router: 4.0.14_vue@3.2.31
+  vue3-carousel: 0.1.38_vue@3.2.31
 
 devDependencies:
   '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
@@ -1753,6 +1755,14 @@ packages:
       '@vue/runtime-dom': 3.2.31
       '@vue/server-renderer': 3.2.31_vue@3.2.31
       '@vue/shared': 3.2.31
+    dev: false
+
+  /vue3-carousel/0.1.38_vue@3.2.31:
+    resolution: {integrity: sha512-mTWvlyFIu2QqnMbHiphdJWKRBaPHG8oXr5fcRWjvnPwcQ3XCpI9/FLDI/l1vVBCs13hBSuKp/kYleuxs2WOoKA==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.2.31
     dev: false
 
   /with/7.0.2:
