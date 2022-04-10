@@ -15,10 +15,6 @@ const navigatorLinks: NavigatorLink[] = [
     path: "/",
   },
   {
-    text: "Produk",
-    path: "/produk",
-  },
-  {
     text: "Pengajuan Kredit",
     path: "/ajukan-kredit",
   },
@@ -29,6 +25,12 @@ const navigatorLinks: NavigatorLink[] = [
 ];
 
 onMounted(() => {
+  if (window.innerWidth > 768) {
+    show.value = true;
+  } else {
+    show.value = false;
+  }
+
   window.addEventListener("resize", () => {
     show.value = window.innerWidth > 768;
   });

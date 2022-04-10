@@ -5,13 +5,22 @@ import useMeta from "../composable/useMeta";
 import Button from "../components/Button.vue";
 import useEntityGetter from "../composable/useEntityGetter";
 import { Product } from "../typings/Product";
+import ProductCard from "../components/ProductCard.vue";
+import usePaginationGetter from "../composable/usePaginationGetter";
 
 const slug = ref<string>("");
+const selectedVariant = ref<number>(0);
 const selectedImage = ref<string>("");
 const route = useRoute();
 
 const { fetcher, data } = useEntityGetter<Product>(route.params.slug as string, {
   path: "products",
+  autoFetch: true,
+});
+
+const { data: products } = usePaginationGetter<Product>({
+  path: "products",
+  perPage: 3,
   autoFetch: true,
 });
 
@@ -48,12 +57,12 @@ watch(data, (val) => {
 <template>
   <div v-if="data" class="flex justify-center py-5 bg-primary">
     <div class="w-full max-w-screen-lg">
-      <div class="mt-5">
-        <div class="flex flex-col md:flex-row gap-10">
+      <div class="mt-5 flex flex-col md:flex-row gap-10">
+        <div class="flex-1">
           <div class="flex-1">
             <img :src="selectedImage" class="w-full" />
           </div>
-          <div class="flex-1 grid grid-cols-3 gap-3 h-fit p-3 md:p-0">
+          <div class="flex-1 grid grid-cols-4 gap-3 h-fit p-3 md:p-0">
             <div
               v-for="image in data.images"
               :key="image.id"
@@ -71,35 +80,40 @@ watch(data, (val) => {
           </div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-10 mt-10">
-          <div class="flex-1 grid grid-cols-1 md:px-0 px-5 md:grid-cols-2 gap-5">
-            <div
-              v-for="type in data.types"
-              class="border rounded shadow-lg bg-accent p-5"
-            >
-              <p class="text-xl font-bold text-red-500">{{ type.name }}</p>
-              <div class="flex flex-col items-end">
-                <p class="text-xs mt-2">Mulai dari</p>
-                <p class="text-2xl font-bold text-red-500">
-                  Rp. {{ Intl.NumberFormat("ID-id").format(type.price) }}
-                </p>
-              </div>
-              <div class="flex justify-between mt-4">
-                <p>{{ type.transmission }}</p>
-                <p>{{ type.fuel }}</p>
-              </div>
-              <div class="flex justify-center mt-5">
-                <Button tag="a" :href="generateWhatsappText(type)">Hubungi Kami</Button>
-              </div>
-            </div>
-          </div>
-
+        <div class="flex-1 px-5 md:px-0">
           <div class="flex-1">
-            <h1 class="font-bold text-3xl text-center md:text-left text-accent">
+            <h1 class="font-bold text-3xl text-center md:text-left border-b pb-5">
               {{ data.name }}
             </h1>
-            <p class="indent-8 mt-10">{{ data.description }}</p>
+            <p class="indent-8 mt-5">{{ data.description }}</p>
           </div>
+          <p class="mt-10 text-xs">Harga Mulai</p>
+          <p class="font-semibold text-4xl text-red-500">
+            Rp. {{ Intl.NumberFormat("ID-id").format(data.types[selectedVariant].price) }}
+          </p>
+          <div class="flex-1 flex flex-wrap gap-5 mt-10">
+            <div
+              v-for="(type, index) in data.types"
+              class="border rounded-full shadow-lg bg-white hover:bg-gray-100 px-3 py-2 whitespace-nowrap cursor-pointer"
+              :class="{
+                'border-red-500': selectedVariant === index,
+              }"
+              @click="selectedVariant = index"
+            >
+              {{ type.name }}
+            </div>
+          </div>
+          <div class="mt-10 flex justify-end gap-5 px-10">
+            <Button>Hubungi Kami</Button>
+            <Button>Ajukan Kredit</Button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-24 px-5">
+        <h4 class="text-xl font-bold">Produk Lainnya</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
+          <ProductCard v-for="item in products" :key="item.slug" :data="item" />
         </div>
       </div>
     </div>

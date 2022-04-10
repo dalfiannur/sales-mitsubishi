@@ -29,7 +29,7 @@ const transmissions = computed(() =>
 
 <template>
   <div
-    class="overflow-hidden bg-accent rounded shadow-lg hover:bg-gray-200 hover:shadow-xl"
+    class="overflow-hidden bg-primary rounded shadow-lg hover:bg-gray-200 hover:shadow-xl"
   >
     <div class>
       <img

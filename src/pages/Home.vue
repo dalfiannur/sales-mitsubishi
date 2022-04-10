@@ -11,14 +11,17 @@ import usePaginationGetter from "../composable/usePaginationGetter";
 import { Product } from "../typings/Product";
 import { News } from "../typings/News";
 import { Testimonial } from "../typings/Testimonial";
+import { ref } from "vue";
 
 useMeta({
   title: "Homepage",
 });
 
-const { data: products } = usePaginationGetter<Product>({
+const productPerPage = ref<number>(3);
+
+const { data: products, setPerPage } = usePaginationGetter<Product>({
   path: "products",
-  perPage: 3,
+  perPage: productPerPage.value,
   autoFetch: true,
 });
 
@@ -33,6 +36,11 @@ const { data: testimonials } = usePaginationGetter<Testimonial>({
   perPage: 5,
   autoFetch: true,
 });
+
+const loadMoreProduct = () => {
+  productPerPage.value = productPerPage.value + 3;
+  setPerPage(productPerPage.value);
+};
 </script>
 
 <template>
@@ -40,32 +48,8 @@ const { data: testimonials } = usePaginationGetter<Testimonial>({
     class="bg-fixed bg-center bg-no-repeat bg-cover"
     style="background-image: url('/img/background.webp')"
   >
-    <BannerSlider />
-
     <div
-      id="produk"
-      class="relative flex flex-col items-center justify-center pt-10 pb-10 bg-primary"
-    >
-      <div class="absolute z-[1] top-0 left-0 clip-3 h-full w-full bg-secondary" />
-      <div
-        class="flex items-end justify-between w-full max-w-screen-lg static z-[2] px-4 md:px-0"
-      >
-        <div>
-          <h5 class="text-3xl font-bold text-white">Produk Kami</h5>
-        </div>
-        <div>
-          <Button @click="$router.push('/produk')">Lainnya</Button>
-        </div>
-      </div>
-      <div
-        class="grid w-full max-w-screen-lg grid-cols-1 md:grid-cols-3 gap-10 mt-10 static z-[2] px-5 md:px-0"
-      >
-        <ProductCard v-for="item in products" :key="item.name" :data="item" />
-      </div>
-    </div>
-
-    <div
-      class="pt-10 h-[590px] bg-secondary bg-opacity-60 flex justify-center items-center"
+      class="pt-10 h-[720px] bg-secondary bg-opacity-60 flex justify-center items-center"
     >
       <div
         class="flex flex-col items-center justify-between w-full max-w-screen-lg md:flex-row"
@@ -91,6 +75,28 @@ const { data: testimonials } = usePaginationGetter<Testimonial>({
             >Hubungi Kami</Button
           >
         </div>
+      </div>
+    </div>
+
+    <div
+      id="produk"
+      class="relative flex flex-col items-center justify-center pt-10 pb-10 bg-primary"
+    >
+      <div class="absolute z-[1] top-0 left-0 clip-3 h-full w-full bg-secondary" />
+      <div
+        class="flex items-end justify-between w-full max-w-screen-lg static z-[2] px-4 md:px-0"
+      >
+        <div>
+          <h5 class="text-3xl font-bold text-white">Produk Kami</h5>
+        </div>
+      </div>
+      <div
+        class="grid w-full max-w-screen-lg grid-cols-1 md:grid-cols-3 gap-10 mt-10 static z-[2] px-5 md:px-0"
+      >
+        <ProductCard v-for="item in products" :key="item.name" :data="item" />
+      </div>
+      <div class="z-[10] mt-10">
+        <Button @click="loadMoreProduct">Tampilkan Lebih Banyak</Button>
       </div>
     </div>
 

@@ -6,7 +6,7 @@ interface Option {
   autoFetch: boolean;
 }
 
-export default function useEntityGetter<T>(idOrSlugDefault: string|number, option: Option) {
+export default function useEntityGetter<T>(idOrSlugDefault: string|number|null, option: Option) {
   const axios = useAxios()
   const data = ref<T>()
   const isLoading = ref<boolean>(false)
@@ -48,7 +48,7 @@ export default function useEntityGetter<T>(idOrSlugDefault: string|number, optio
 
   onMounted(() => {
     if (option.autoFetch) {
-      fetcher(idOrSlugDefault)
+      if (idOrSlugDefault) fetcher(idOrSlugDefault)
     }
   })
 

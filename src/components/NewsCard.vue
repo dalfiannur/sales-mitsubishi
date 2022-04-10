@@ -10,7 +10,7 @@ const { data } = defineProps<Prop>();
 
 <template>
   <div
-    class="w-full overflow-hidden bg-accent rounded shadow hover:bg-gray-200 hover:shadow-lg"
+    class="w-full overflow-hidden bg-primary rounded shadow hover:bg-gray-200 hover:shadow-lg"
   >
     <div class="w-full aspect-square">
       <a

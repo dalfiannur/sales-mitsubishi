@@ -6,10 +6,6 @@ const routes: RouteRecordRaw[] = [
         component: () => import('./pages/Home.vue')
     },
     {
-        path: '/produk',
-        component: () => import('./pages/Product.vue')
-    },
-    {
         path: '/produk/:slug',
         component: () => import('./pages/ProductDetail.vue')
     },
@@ -20,6 +16,10 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/berita/:slug',
         component: () => import('./pages/NewsDetail.vue')
+    },
+    {
+        path: '/ajukan-kredit',
+        component: () => import('./pages/CreditRequest.vue')
     }
 ]
 

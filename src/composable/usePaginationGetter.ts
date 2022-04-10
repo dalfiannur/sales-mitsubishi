@@ -11,6 +11,7 @@ export default function usePaginationGetter<T>(option: Option) {
   const axios = useAxios()
   const data = ref<T[]>([])
   const currentPage = ref<number>(1)
+  const perPage = ref<number>(option.perPage)
   const totalPage = ref<number>(0)
   const isLoading = ref<boolean>(false)
   const isError = ref<boolean>(false)
@@ -19,12 +20,16 @@ export default function usePaginationGetter<T>(option: Option) {
   const getQueries = () => {
     const query = new URLSearchParams()
     query.set("page", currentPage.value.toString())
-    query.set("perPage", option.perPage.toString())
+    query.set("perPage", perPage.value.toString())
     return query.toString()
   }
 
   const setPage = (page: number) => {
     currentPage.value = page
+  }
+
+  const setPerPage = (page: number) => {
+    perPage.value = page
   }
 
   const setTotalPage = ({ total, per_page }: { total: number, per_page: number }) => {
@@ -73,7 +78,7 @@ export default function usePaginationGetter<T>(option: Option) {
     }
   })
 
-  watch(currentPage, (page) => {
+  watch([currentPage, perPage], () => {
     fetcher()
   })
 
@@ -83,6 +88,7 @@ export default function usePaginationGetter<T>(option: Option) {
     totalPage,
     fetcher,
     setPage,
+    setPerPage,
     onSuccess,
     onError,
   }

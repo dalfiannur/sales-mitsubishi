@@ -44,9 +44,10 @@ module.exports = {
       rose: colors.rose,
       'red-ruby': 'rgb(153, 0, 0)',
       'red-ruby-light': 'rgb(173, 0, 0)',
-      primary: '#8d99ae',
+      // primary: '#8d99ae',
+      primary: '#fefefe',
       secondary: '#2b2d42',
-      accent: '#edf2f4'
+      accent: '#8d99ae'
     }),
     columns: {
       auto: 'auto',
