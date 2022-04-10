@@ -46,7 +46,7 @@
         <div class="flex flex-col items-center justify-end text-white md:items-end w-fit">
           <p class="text-sm text-right">Copyright &copy; 2022</p>
           <p class="mt-5 text-xs">Supported by</p>
-          <a href="#" class="text-xs uppercase">PT. Padjajaran Technology</a>
+          <a href="#" class="text-xs uppercase">Padjajaran Technology</a>
         </div>
       </div>
     </div>
