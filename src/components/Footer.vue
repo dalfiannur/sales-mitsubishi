@@ -14,14 +14,14 @@
           </h2>
         </div>
         <div
-          class="pl-0 md:pl-16 mt-10 md:mt-5 ml-0 text-sm text-white md:ml-5 text-center md:text-left"
+          class="pl-0 mt-10 ml-0 text-sm text-center text-white md:pl-16 md:mt-5 md:ml-5 md:text-left"
         >
           Jl. Sisingamangaraja Km.7 No.34,
           <br />Medan Amplas, Harjosari II, Medan, <br />Sumatera Utara - 20147 Indonesia
         </div>
       </div>
       <div
-        class="fixed bottom-0 left-0 z-20 flex items-center justify-center w-full px-4 py-4 border-t-4 md:border-orange-500 md:border-0 bg-red-ruby md:bg-transparent md:px-0 mt-14 md:mt-0 md:w-fit md:relative"
+        class="fixed bottom-0 left-0 z-20 flex items-center justify-center w-full px-4 py-4 border-t-4 md:border-accent md:border-0 bg-secondary md:bg-transparent md:px-0 mt-14 md:mt-0 md:w-fit md:relative"
       >
         <div class="flex flex-row items-center justify-around w-full md:flex-col">
           <a href="tel:+62617866868" class="flex items-center gap-3">

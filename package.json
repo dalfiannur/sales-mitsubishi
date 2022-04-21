@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@faker-js/faker": "^6.1.1",
+    "@glidejs/glide": "^3.5.2",
+    "@types/glidejs__glide": "^3.4.1",
     "@types/mapbox-gl": "^2.6.3",
     "@types/node": "^17.0.23",
     "autoprefixer": "^10.4.4",
@@ -19,8 +21,7 @@
     "sass": "^1.49.9",
     "tailwindcss": "^3.0.23",
     "vue": "^3.2.25",
-    "vue-router": "^4.0.14",
-    "vue3-carousel": "^0.1.38"
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",

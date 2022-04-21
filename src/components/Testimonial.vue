@@ -13,7 +13,7 @@ const { item } = toRefs(props);
 
 <template>
   <div
-    class="border shadow-lg rounded-xl testimonial-item overflow-hidden"
+    class="overflow-hidden border shadow-lg rounded-xl h-[400px]"
     :style="{
       backgroundImage: `url(${item.imageUrl})`,
     }"
@@ -37,11 +37,6 @@ const { item } = toRefs(props);
         <div class="flex flex-col justify-center">
           <p class="text-xl font-bold text-red-500">{{ item.name }}</p>
           <p class="text-sm font-bold text-yellow-500">{{ item.position }}</p>
-        </div>
-        <div
-          class="absolute font-serif text-[100px] top-0 leading-[0] right-0 text-red-500"
-        >
-          &bdquo;
         </div>
       </div>
     </div>

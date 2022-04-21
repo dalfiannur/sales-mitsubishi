@@ -18,18 +18,11 @@ const minPrice = computed(() => {
     return 0;
   })[0].price;
 });
-
-const fuels = computed(() =>
-  [...new Set(data.value.types.map((item: any) => item.fuel))].join(",")
-);
-const transmissions = computed(() =>
-  [...new Set(data.value.types.map((item: any) => item.transmission))].join(", ")
-);
 </script>
 
 <template>
   <div
-    class="overflow-hidden bg-primary rounded shadow-lg hover:bg-gray-200 hover:shadow-xl h-[500px]"
+    class="overflow-hidden bg-primary rounded shadow-lg hover:bg-gray-200 hover:shadow-xl min-h-[500px]"
   >
     <div class>
       <img
@@ -43,7 +36,7 @@ const transmissions = computed(() =>
       <h6 class="py-5 text-xl font-bold text-center">{{ data.name }}</h6>
       <div class="px-5 pb-5">
         <div>
-          <div class="flex justify-between items-center">
+          <div class="flex items-center justify-between">
             <div>
               <div class="text-xs font-bold text-left">Mulai Dari</div>
               <div class="text-lg font-bold">

@@ -96,6 +96,7 @@ export default function usePaginationGetter<T>(option: Option) {
   return {
     data,
     currentPage,
+    perPage,
     totalPage,
     fetcher,
     setPage,

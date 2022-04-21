@@ -2,6 +2,8 @@ lockfileVersion: 5.3
 
 specifiers:
   '@faker-js/faker': ^6.1.1
+  '@glidejs/glide': ^3.5.2
+  '@types/glidejs__glide': ^3.4.1
   '@types/mapbox-gl': ^2.6.3
   '@types/node': ^17.0.23
   '@vitejs/plugin-vue': ^2.2.0
@@ -17,10 +19,11 @@ specifiers:
   vue: ^3.2.25
   vue-router: ^4.0.14
   vue-tsc: ^0.29.8
-  vue3-carousel: ^0.1.38
 
 dependencies:
   '@faker-js/faker': 6.1.1
+  '@glidejs/glide': 3.5.2
+  '@types/glidejs__glide': 3.4.1
   '@types/mapbox-gl': 2.6.3
   '@types/node': 17.0.23
   autoprefixer: 10.4.4_postcss@8.4.12
@@ -32,7 +35,6 @@ dependencies:
   tailwindcss: 3.0.23_autoprefixer@10.4.4
   vue: 3.2.31
   vue-router: 4.0.14_vue@3.2.31
-  vue3-carousel: 0.1.38_vue@3.2.31
 
 devDependencies:
   '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
@@ -94,6 +96,10 @@ packages:
   /@faker-js/faker/6.1.1:
     resolution: {integrity: sha512-8yq1LJVGn4GY06riLddIU1LbJm15yjt46hjfkpWNpH/mqdciPOBVzicKOJxzQNrGgVHVBxcdm7sgwjI/Y19MYw==}
     engines: {node: '>=14.0.0', npm: '>=7.0.0'}
+    dev: false
+
+  /@glidejs/glide/3.5.2:
+    resolution: {integrity: sha512-7jGciNJ2bQ4eZLSNlSZ+VAyW63kALf420CvkEpK4lEsUfWJq9odqimci0YCiyNyMUFB+pWHwLYyNc57dijYsCg==}
     dev: false
 
   /@mapbox/geojson-rewind/0.5.1:
@@ -163,6 +169,10 @@ packages:
 
   /@types/geojson/7946.0.8:
     resolution: {integrity: sha512-1rkryxURpr6aWP7R786/UQOkJ3PcpQiWkAXBmdWc7ryFWqN6a4xfK7BtjXvFBKO9LjQ+MWQSWxYeZX1OApnArA==}
+    dev: false
+
+  /@types/glidejs__glide/3.4.1:
+    resolution: {integrity: sha512-ib2VRchnLSXGOdiZFfCt6QEIYviw5g+Yey8Q2+kMzUxGXsnR9ZwZi1qPXI1ttrvR/AtUYZmSSHDVVSoIyt6LPw==}
     dev: false
 
   /@types/mapbox-gl/2.6.3:
@@ -1755,14 +1765,6 @@ packages:
       '@vue/runtime-dom': 3.2.31
       '@vue/server-renderer': 3.2.31_vue@3.2.31
       '@vue/shared': 3.2.31
-    dev: false
-
-  /vue3-carousel/0.1.38_vue@3.2.31:
-    resolution: {integrity: sha512-mTWvlyFIu2QqnMbHiphdJWKRBaPHG8oXr5fcRWjvnPwcQ3XCpI9/FLDI/l1vVBCs13hBSuKp/kYleuxs2WOoKA==}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      vue: 3.2.31
     dev: false
 
   /with/7.0.2:
