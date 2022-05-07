@@ -12,7 +12,7 @@ useMeta({
 </script>
 
 <template>
-  <div class="bg-fixed bg-center bg-no-repeat bg-cover" style="background-image: url('/img/background.webp')">
+  <div class="bg-center bg-no-repeat bg-cover" style="background-image: url('/img/background.webp')">
     <div class="pt-10 h-[720px] bg-secondary bg-opacity-60 flex justify-center items-center">
       <div class="flex flex-col items-center justify-between w-full max-w-screen-lg md:flex-row">
         <div class="w-full md:w-[600px] px-4 md:px-0">
@@ -33,7 +33,8 @@ useMeta({
         </div>
       </div>
     </div>
-
+  </div>
+  <div>
     <ProductArea />
 
     <!-- Berita -->
@@ -63,6 +64,4 @@ useMeta({
 .clip-2 {
   clip-path: polygon(0% 0%, 35% 0%, 60% 100%, 0% 100%);
 }
-
-
 </style>
