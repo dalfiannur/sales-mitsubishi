@@ -20,7 +20,7 @@ const navigatorLinks: NavigatorLink[] = [
   },
   {
     text: "Kontak",
-    path: "/ajukan-kredit",
+    path: "/kontak",
   }
 ];
 

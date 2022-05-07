@@ -16,6 +16,10 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/ajukan-kredit',
         component: () => import('./pages/CreditRequest.vue')
+    },
+    {
+        path: '/kontak',
+        component: () => import('./pages/Contact.vue')
     }
 ]
 
