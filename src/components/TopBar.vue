@@ -18,6 +18,10 @@ const navigatorLinks: NavigatorLink[] = [
     text: "Pengajuan Kredit",
     path: "/ajukan-kredit",
   },
+  {
+    text: "Kontak",
+    path: "/ajukan-kredit",
+  }
 ];
 
 onMounted(() => {
