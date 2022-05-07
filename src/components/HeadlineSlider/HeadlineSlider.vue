@@ -1,10 +1,10 @@
 <script setup lang="ts">
   import {ref, defineProps, toRefs, onBeforeUnmount, onMounted} from 'vue'
   import SliderItem from './SliderItem.vue';
-  import {MainBanner} from '../../../typings/MainBanner'
+  import {Banner} from '../../typings/Banner'
 
   interface Prop {
-    items: MainBanner[]
+    items: Banner[]
   }
 
   const props = defineProps<Prop>();

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { defineProps, computed, toRefs } from 'vue'
-import { MainBanner } from '../../../typings/MainBanner'
+import { Banner } from '../../typings/Banner'
 
 interface Prop {
-    data: MainBanner;
+    data: Banner;
     currentSlide: number;
     index: number;
     direction: string;
