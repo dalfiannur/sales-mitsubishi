@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex justify-center py-10 md:py-20 sm:pb-4 bg-secondary border-t-8 !border-accent"
-  >
+  <div class="flex justify-center py-10 md:py-20 sm:pb-4 bg-secondary border-t-8 !border-accent">
     <div class="flex flex-col justify-between w-full max-w-screen-lg md:flex-row">
       <div class="w-full md:w-fit">
         <div class="flex items-center justify-center gap-5 md:justify-start">
@@ -13,32 +11,26 @@
             <br />PAHALA OTOMOTIF
           </h2>
         </div>
-        <div
-          class="pl-0 mt-10 ml-0 text-sm text-center text-white md:pl-16 md:mt-5 md:ml-5 md:text-left"
-        >
+        <div class="pl-0 mt-10 ml-0 text-sm text-center text-white md:pl-16 md:mt-5 md:ml-5 md:text-left">
           Jln. Gatot Subroto No.Kav 50-52,
           <br /> (Samping Gedung Dipo Tower Slipi), <br />Jakarta Pusat - 10260 Indonesia
         </div>
       </div>
       <div
-        class="fixed bottom-0 left-0 z-20 flex items-center justify-center w-full px-4 py-4 border-t-4 md:border-accent md:border-0 bg-secondary md:bg-transparent md:px-0 mt-14 md:mt-0 md:w-fit md:relative"
-      >
+        class="fixed bottom-0 left-0 z-20 flex items-center justify-center w-full px-4 py-4 border-t-4 md:border-accent md:border-0 bg-secondary md:bg-transparent md:px-0 mt-14 md:mt-0 md:w-fit md:relative">
         <div class="flex flex-row items-center justify-around w-full md:flex-col">
           <a href="tel:0215709057" class="flex items-center gap-3">
-            <img src="/img/phone.png" class="w-5 h-5" />
+            <img src="/img/phone.png" class="w-7 h-7" />
             <span class="hidden text-sm text-white md:block">021-570 9057</span>
           </a>
-          <a
-            href="https://wa.me/6281290671767?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil"
-            target="__blank"
-            class="flex items-center gap-3 mt-0 md:mt-3"
-          >
-            <img src="/img/whatsapp.png" class="w-5 h-5" />
-            <span class="hidden text-sm text-white md:block">+62 812 906 717 67</span>
-          </a>
           <a href="mail:susilila168@gmail.com" class="flex items-center gap-3 mt-0 md:mt-3">
-            <img src="/img/gmail.png" class="w-5 h-5" />
+            <img src="/img/gmail.png" class="w-7 h-7" />
             <span class="hidden text-sm text-white md:block">susilila168@gmail.com</span>
+          </a>
+          <a href="https://wa.me/6281290671767?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil" target="__blank"
+            class="flex items-center gap-3 mt-0 md:mt-3">
+            <img src="/img/whatsapp.png" class="w-7 h-7" />
+            <span class="hidden text-sm text-white md:block">+62 812 906 717 67</span>
           </a>
         </div>
       </div>
