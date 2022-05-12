@@ -1,5 +1,13 @@
 <template>
-  <div class="flex justify-center py-10 md:py-20 sm:pb-4 bg-secondary border-t-8 !border-accent">
+  <div class="w-full justify-center items-center text-secondary text-center mt-8">
+    <h1 class="text-4xl font-bold">Kontak</h1>
+    <img src="/img/foto.jpg" class="h-40 m-auto mt-8 mb-4 border-2 border-secondary" />
+    <div class="text-xl mb-8">
+      <h3>Susilila</h3>
+      <h3>Marketer Mitsubishi Jakarta </h3>
+    </div>
+  </div>
+  <div class="flex flex-col justify-center py-10 md:py-20 sm:pb-4 bg-secondary border-t-8 !border-accent">
     <div class="flex flex-col justify-between w-full max-w-screen-lg md:flex-row">
       <div class="w-full md:w-fit">
         <div class="flex items-center justify-center gap-5 md:justify-start">
