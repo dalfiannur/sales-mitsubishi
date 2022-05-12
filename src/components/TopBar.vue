@@ -29,7 +29,7 @@ const navigatorLinks: NavigatorLink[] = [
   },
   {
     text: "Kontak",
-    path: "#map",
+    path: "#kontak",
   }
 ];
 
