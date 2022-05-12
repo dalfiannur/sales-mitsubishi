@@ -46,7 +46,7 @@ module.exports = {
       'red-ruby-light': 'rgb(173, 0, 0)',
       // primary: '#8d99ae',
       primary: '#fefefe',
-      secondary: '#2b2d42',
+      secondary: '#000000',
       accent: '#8d99ae'
     }),
     columns: {
