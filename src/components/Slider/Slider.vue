@@ -53,8 +53,8 @@ onMounted(() => {
     </div>
 
     <div v-if="options?.hasArrows" class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--left !left-2 !bg-secondary" data-glide-dir="<">prev</button>
-      <button class="glide__arrow glide__arrow--right !right-2 !bg-secondary" data-glide-dir=">">next</button>
+      <button class="font-bold text-xl glide__arrow glide__arrow--left !left-2 md:!left-[-3.75rem] !bg-secondary" data-glide-dir="<">&#60;</button>
+      <button class="font-bold text-xl glide__arrow glide__arrow--right !right-2 md:!right-[-3.75rem] !bg-secondary" data-glide-dir=">">&#62;</button>
     </div>
 
     <div v-if="options?.hasBullet" class="!-bottom-5 glide__bullets" data-glide-el="controls[nav]">
