@@ -48,9 +48,9 @@ onMounted(() => {
 
 <template>
   <div class="fixed top-0 z-30 flex justify-center w-full bg-secondary border-b-8 border-accent">
-    <div class="relative flex items-center justify-between w-full h-16 max-w-screen-xl px-4 md:px-10">
+    <div class="relative flex items-center justify-between w-full h-16 mx-12 lg:mx-32">
       <a href="/" @click.prevent="$router.push('/')" class="flex items-center gap-5">
-        <img src="/img/logo.png" class="h-12" />
+        <img src="/img/logo.png" class="h-10" />
         <h1 class="text-xl font-bold text-white uppercase">Mitsubishi</h1>
       </a>
 
@@ -59,7 +59,7 @@ onMounted(() => {
         <Transition name="slide-fade">
           <div v-show="show"
             class="absolute left-0 w-full gap-5 p-4 shadow md:relative bg-primary md:bg-transparent top-16 md:top-0">
-            <ul class="flex flex-col gap-5 md:flex-row">
+            <ul class="flex flex-col gap-5 lg:gap-8 md:flex-row">
               <li v-for="link in navigatorLinks" :key="link.text">
                 <a :href="link.path" class="font-semibold text-white">{{ link.text }}</a>
               </li>
