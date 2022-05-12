@@ -23,7 +23,7 @@ const transitionEffect = computed(() => {
 
 <template>
     <transition :name="transitionEffect">
-        <div class="w-full h-full absolute bg-no-repeat bg-top bg-cover" :class="`bg-[url('${data.imageSource}')]`"
+        <div class="w-full h-full absolute bg-no-repeat bg-top bg-cover" :style="{'background-image': `url(${data.imageSource})`}"
             v-show="currentSlide === index">
             <div class="pt-10 h-full bg-secondary bg-opacity-60 flex justify-center items-center">
                 <div class="w-full flex flex-col items-start mx-10 sm:mx-32">
