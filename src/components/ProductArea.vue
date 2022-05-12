@@ -13,7 +13,7 @@ const { data: products, perPage, setPerPage } = usePaginationGetter<Product>({
 
 const options = {
   gap: 30,
-  perView: 3,
+  perView: 5,
   hasBullet: true,
   hasArrows: true,
   breakpoints: {
@@ -21,10 +21,10 @@ const options = {
       perView: 1
     },
     800: {
-      perView: 2
+      perView: 3
     },
     1200: {
-      perView: 3
+      perView: 5
     }
   }
 }
@@ -42,7 +42,7 @@ const loadMoreProduct = () => {
         <h5 class="text-3xl font-bold text-white">Produk Kami</h5>
       </div>
     </div>
-    <div class="z-10 w-full max-w-screen-lg px-5 mt-10">
+    <div class="z-10 w-full px-5 mt-10">
       <Slider id="product-slider" :items="products" :options="options">
         <template #item="{ item, classes }">
           <li :class="classes">
