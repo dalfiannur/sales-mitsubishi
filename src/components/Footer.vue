@@ -16,29 +16,29 @@
         <div
           class="pl-0 mt-10 ml-0 text-sm text-center text-white md:pl-16 md:mt-5 md:ml-5 md:text-left"
         >
-          Jl. Sisingamangaraja Km.7 No.34,
-          <br />Medan Amplas, Harjosari II, Medan, <br />Sumatera Utara - 20147 Indonesia
+          Jln. Gatot Subroto No.Kav 50-52,
+          <br /> (Samping Gedung Dipo Tower Slipi), <br />Jakarta Pusat - 10260 Indonesia
         </div>
       </div>
       <div
         class="fixed bottom-0 left-0 z-20 flex items-center justify-center w-full px-4 py-4 border-t-4 md:border-accent md:border-0 bg-secondary md:bg-transparent md:px-0 mt-14 md:mt-0 md:w-fit md:relative"
       >
         <div class="flex flex-row items-center justify-around w-full md:flex-col">
-          <a href="tel:+62617866868" class="flex items-center gap-3">
+          <a href="tel:0215709057" class="flex items-center gap-3">
             <img src="/img/phone.png" class="w-5 h-5" />
-            <span class="hidden text-sm text-white md:block">+62 617 866 868</span>
+            <span class="hidden text-sm text-white md:block">021-570 9057</span>
           </a>
           <a
-            href="https://wa.me/6281280438004?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil"
+            href="https://wa.me/6281290671767?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil"
             target="__blank"
             class="flex items-center gap-3 mt-0 md:mt-3"
           >
             <img src="/img/whatsapp.png" class="w-5 h-5" />
-            <span class="hidden text-sm text-white md:block">+62 617 866 868</span>
+            <span class="hidden text-sm text-white md:block">+62 812 906 717 67</span>
           </a>
-          <a href="mail:git@sbmgrp.com" class="flex items-center gap-3 mt-0 md:mt-3">
+          <a href="mail:susilila168@gmail.com" class="flex items-center gap-3 mt-0 md:mt-3">
             <img src="/img/gmail.png" class="w-5 h-5" />
-            <span class="hidden text-sm text-white md:block">git@sbmgrp.com</span>
+            <span class="hidden text-sm text-white md:block">susilila168@gmail.com</span>
           </a>
         </div>
       </div>

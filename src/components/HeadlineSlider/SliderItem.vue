@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { defineProps, computed, toRefs } from 'vue'
-import { Banner } from '../../typings/Banner'
+// @ts-ignore
+import Button from "../../components/Button.vue";
+// @ts-ignore
+import { HeadlineBanner } from '../../typings/HeadlineBanner'
 
 interface Prop {
-    data: Banner;
+    data: HeadlineBanner;
     currentSlide: number;
     index: number;
     direction: string;
@@ -18,29 +21,33 @@ const transitionEffect = computed(() => {
 })
 </script>
 
-
 <template>
     <transition :name="transitionEffect">
-        <div class="absolute top-0 bottom-0 left-0 right-0 gradient" :href="data.link" v-show="currentSlide === index">
-            <div class="absolute left-0 flex flex-col justify-center h-full max-w-[60%] pl-[15%]">
-                <h2 class="text-6xl text-white font-din-next-lt-pro-light">{{ data.title }}</h2>
-                <h2 class="mt-5 text-3xl text-white font-din-next-lt-pro-light">{{ data.subTitle }}</h2>
-            </div>
-            <div class="relative flex items-end justify-end h-full">
-                <img :src="data.imageSourceUrl" :alt="`slide-${index}`" class="block h-full" />
+        <div class="w-full h-full absolute bg-no-repeat bg-top bg-cover" :class="`bg-[url('${data.imageSource}')]`"
+            v-show="currentSlide === index">
+            <div class="pt-10 h-full bg-secondary bg-opacity-60 flex justify-center items-center">
+                <div class="w-full flex flex-col items-start mx-10 sm:mx-32">
+                    <div class="w-full md:w-[600px]">
+                        <div class="text-5xl sm:text-6xl font-bold text-white">
+                            {{ data.title }}
+                        </div>
+                        <div class="mt-5 text-lg sm:text-xl font-bold text-yellow-500">
+                            {{ data.subTitle }}
+                        </div>
+                        <div class="text-2xl sm:text-3xl font-bold text-yellow-500">
+                            {{ data.subTitle2 }}
+                        </div>
+                    </div>
+                    <div class="flex justify-center flex-1 mt-12">
+                        <Button tag="a" :href="data.buttonLink" target="_blank" size="lg">Hubungi Kami</Button>
+                    </div>
+                </div>
             </div>
         </div>
     </transition>
 </template>
 
 <style scoped>
-.gradient {
-    background: linear-gradient(100deg,
-            rgba(99, 196, 180, 1) 20%,
-            rgba(99, 196, 180, 0) 90%,
-            rgba(255, 255, 255, 0) 100%);
-}
-
 .slide-in-enter-active,
 .slide-in-leave-active,
 .slide-out-enter-active,
