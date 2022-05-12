@@ -16,7 +16,7 @@ const navigatorLinks: NavigatorLink[] = [
   },
   {
     text: "Pengajuan Kredit",
-    path: "https://wa.me/6281290671767?text=Hai,%20saya%20ingin%20mengajukan%20kredit",
+    path: "",
   },
   {
     text: "Kontak",
