@@ -93,7 +93,7 @@ watch(data, (val) => {
           </p>
           <div class="flex-1 flex flex-wrap gap-5 mt-10">
             <div
-              v-for="(type, index) in data.types"
+              v-for="(type, index) in data.types" :key="index"
               class="border rounded-full shadow-lg bg-white hover:bg-gray-100 px-3 py-2 whitespace-nowrap cursor-pointer"
               :class="{
                 'border-red-500': selectedVariant === index,
@@ -104,8 +104,8 @@ watch(data, (val) => {
             </div>
           </div>
           <div class="mt-10 flex justify-end gap-5 px-10">
-            <Button>Hubungi Kami</Button>
-            <Button>Ajukan Kredit</Button>
+            <a href="https://wa.me/6281290671767?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil"><Button>Hubungi Kami</Button></a>
+            <a href="https://wa.me/6281290671767?text=Hai,%20saya%20ingin%20mengajukan%20kredit"><Button>Ajukan Kredit</Button></a>
           </div>
         </div>
       </div>
