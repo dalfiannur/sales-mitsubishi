@@ -22,7 +22,6 @@ onMounted(() => {
   const init = () => {
     const el = document.querySelector('#' + id.value)
     if (el && items.value.length > 0) {
-      console.log(options?.value?.breakpoints)
       new Glide('#' + id.value, {
         type: 'carousel',
         startAt: 0,

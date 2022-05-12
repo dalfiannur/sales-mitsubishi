@@ -21,34 +21,27 @@ const minPrice = computed(() => {
 </script>
 
 <template>
-  <div
-    class="overflow-hidden bg-primary rounded shadow-lg hover:bg-gray-200 hover:shadow-xl min-h-[500px]"
-  >
+  <div class="overflow-hidden bg-primary rounded shadow-lg hover:bg-gray-200 hover:shadow-xl">
     <div class>
-      <img
-        class="object-cover w-full cursor-pointer aspect-square"
-        :src="data.images[0]?.source_url"
-        @click="$router.push('/produk/' + data.slug)"
-      />
+      <img class="object-contain w-full cursor-pointer aspect-square" :src="data.images[0]?.source_url"
+        @click="$router.push('/produk/' + data.slug)" />
     </div>
 
     <div>
       <h6 class="py-5 text-xl font-bold text-center">{{ data.name }}</h6>
       <div class="px-5 pb-5">
         <div>
-          <div class="flex items-center justify-between">
-            <div>
-              <div class="text-xs font-bold text-left">Mulai Dari</div>
-              <div class="text-lg font-bold">
-                Rp. {{ Intl.NumberFormat("ID-id").format(minPrice) }}
-              </div>
-            </div>
-            <div>
-              <Button size="sm" @click="$router.push('/produk/' + data.slug)"
-                >Lihat Detail</Button
-              >
+
+          <div>
+            <div class="text-xs font-bold text-left">Mulai Dari</div>
+            <div class="text-lg font-bold">
+              Rp. {{ Intl.NumberFormat("ID-id").format(minPrice) }}
             </div>
           </div>
+          <div class="flex justify-center mt-3">
+            <Button size="sm" @click="$router.push('/produk/' + data.slug)">Lihat Detail</Button>
+          </div>
+
 
           <!-- <div class="mt-5">
             <div class="flex items-center gap-2 mt-2 text-xs font-semibold">
