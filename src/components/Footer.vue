@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="flex flex-col justify-center py-10 md:py-20 sm:pb-4 bg-secondary border-t-8 !border-accent">
-    <div class="flex flex-col justify-between w-full max-w-screen-lg md:flex-row">
+    <div class="flex flex-col justify-between w-full max-w-screen-lg md:flex-row m-auto">
       <div class="w-full md:w-fit">
         <div class="flex items-center justify-center gap-5 md:justify-start">
           <div class="flex items-center justify-center w-16 h-16">
