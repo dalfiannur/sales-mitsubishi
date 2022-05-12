@@ -80,8 +80,8 @@ onMounted(() => {
     >
       <img
         class="object-cover w-full h-full cursor-pointer"
-        :src="item.source"
-        :alt="item.source"
+        :src="item.imageSourceUrl"
+        :alt="item.imageSourceUrl"
         @click="onClick(index)"
       />
     </div>

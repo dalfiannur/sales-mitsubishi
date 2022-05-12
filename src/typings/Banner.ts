@@ -1,3 +1,6 @@
 export interface Banner {
-  source: string;
+  link: string;
+  title: string;
+  subTitle: string;
+  imageSourceUrl: string;
 }
