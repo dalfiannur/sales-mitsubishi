@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import useMeta from "../composable/useMeta";
+// @ts-ignore
 import Button from "../components/Button.vue";
+// @ts-ignore
 import Map from "../components/Map.vue";
+// @ts-ignore
 import TestimonialArea from "../components/TestimonialArea.vue";
+// @ts-ignore
 import ProductArea from "../components/ProductArea.vue";
+// @ts-ignore
 import NewsArea from "../components/NewsArea.vue";
 import useHeadlineBanner from '../composable/useGetHeadlineSlider'
+// @ts-ignore
 import HeadlineSlider from '../components/HeadlineSlider/HeadlineSlider.vue'
 
 const { data: mainBanners } = useHeadlineBanner();
@@ -18,16 +24,18 @@ useMeta({
 <template>
   <HeadlineSlider :items="mainBanners"></HeadlineSlider>
   <div>
-    <ProductArea />
-
-    <!-- Berita -->
-    <NewsArea />
-
-    <TestimonialArea />
-
+    <section id="produk">
+      <ProductArea />
+    </section>
+    <section id="artikel">
+      <NewsArea />
+    </section>
+    <section>
+      <TestimonialArea />
+    </section>
     <div class="relative flex justify-end bg-white">
       <div class="w-full static z-[1]">
-        <Map />
+        <Map id="map" />
       </div>
     </div>
   </div>
