@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import usePaginationGetter from '../composable/usePaginationGetter';
+// @ts-ignore
 import ProductCard from "../components/ProductCard.vue";
+// @ts-ignore
 import Button from "../components/Button.vue";
 import { Product } from '../typings/Product';
 import Slider from './Slider';
