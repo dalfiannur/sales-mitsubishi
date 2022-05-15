@@ -48,18 +48,15 @@ const loadMoreNews = () => {
         <NewsCard v-for="item in newsList" :key="item.slug" :data="item" />
       </div>
 
-<<<<<<< HEAD
       <div class="flex justify-center mt-10">
         <Button @click="loadMoreNews">Tampilkan Lebih Banyak</Button>
       </div>
-      
-=======
+
       <!-- <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
         <div v-for="items in $data.totalPage" :key="items">
           <a href="#" aria-current="page" class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"> {{ items }} </a>
         </div>
       </nav> -->
->>>>>>> a6b7e5ca19b6813348784fa66a1c9ea34b17da41
     </div>
   </div>
 </template>
