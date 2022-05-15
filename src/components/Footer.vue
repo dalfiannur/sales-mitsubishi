@@ -81,4 +81,11 @@ import Map from "../components/Map.vue";
       </div>
     </div>
   </div>
+
+  <a class="z-10 pointer" href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
+    <button class="z-10 flex pointer fixed w-[9rem] h-[5.7rem] bg-green-500 shadow-lg bottom-24 right-16" style="border-radius: 50%">
+      <img src="/img/whatsapp.png" class="z-10 pointer w-8 h-8 my-auto ml-4" />
+      <p class="z-10 text-primary font-bold uppercase my-auto mr-2">Hubungi Kami</p>
+    </button>
+  </a>
 </template>
