@@ -38,21 +38,13 @@ const loadMoreProduct = () => {
 
 <template>
   <div id="produk" class="relative flex flex-col items-center justify-center pt-10 pb-10 bg-secondary">
-<<<<<<< HEAD
-    <div class="absolute z-[1] top-0 left-0 clip-3 h-full w-full bg-secondary" />
-    <div class="w-full static z-[2] px-4">
-      <h5 class="text-3xl font-bold text-white text-center">Produk Kami</h5>
-    </div>
-    <div class="z-10 w-full px-20 mt-10">
-=======
     <div class="absolute z-[1] top-0 left-0 h-full w-full bg-secondary" />
     <div class="flex items-center justify-center w-full max-w-screen-lg static z-[2] px-4">
       <div>
         <h5 class="text-3xl font-bold text-primary">Produk Kami</h5>
       </div>
     </div>
-    <div class="z-10 w-full max-w-screen-lg px-5 mt-10">
->>>>>>> 7285eddc92697f4aa3616af56da6b3e7e4515b10
+    <div class="z-10 w-full px-20 mt-10">
       <Slider id="product-slider" :items="products" :options="options">
         <template #item="{ item, classes }">
           <li :class="classes">

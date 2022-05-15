@@ -53,9 +53,9 @@
   </div>
 
   <a class="z-10 pointer" href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
-    <button class="z-10 flex pointer fixed w-[9rem] h-[5.7rem] bg-green-500 shadow-lg bottom-24 right-16" style="border-radius: 50%">
+    <button class="z-10 flex gap-5 px-5 pointer fixed h-[4rem] bg-green-500 shadow-lg bottom-24 right-16 rounded-l-[4rem] rounded-r-[4rem]">
       <img src="/img/whatsapp.png" class="z-10 pointer w-8 h-8 my-auto ml-4" />
-      <p class="z-10 text-primary font-bold uppercase my-auto mr-2">Hubungi Kami</p>
+      <p class="z-10 text-primary font-bold uppercase my-auto mr-2 whitespace-nowrap">Hubungi Kami</p>
     </button>
   </a>
 </template>
