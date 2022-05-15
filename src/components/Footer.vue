@@ -1,8 +1,3 @@
-<script setup lang="ts">
-// @ts-ignore
-import Map from "../components/Map.vue";
-</script>
-
 <template>
   <div class="w-full justify-center items-center text-secondary text-center mt-2 md:mt-8">
     <h1 class="text-4xl font-bold">Kontak</h1>
@@ -70,7 +65,7 @@ import Map from "../components/Map.vue";
           <div class="flex items-center justify-center w-12 h-12 md:w-16 md:h-16">
             <img class="object-cover w-full" src="/img/logo.png" />
           </div>
-          <h2 class="text-lg md:text-xl font-bold text-white">
+          <h2 class="text-xl font-bold text-white sm:w-fit md:flex-1">
             <span class="whitespace-nowrap">PT. DIPO INTERNASIONAL</span>
             <br />PAHALA OTOMOTIF
           </h2>
@@ -86,10 +81,9 @@ import Map from "../components/Map.vue";
   </div>
 
   <a class="z-10 pointer" href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
-    <button class="z-10 flex pointer fixed w-[9rem] h-[5.7rem] bg-green-500 shadow-lg bottom-24 right-16"
-      style="border-radius: 50%">
+    <button class="z-10 flex gap-5 px-5 pointer fixed h-[4rem] bg-green-500 shadow-lg bottom-24 right-16 rounded-l-[4rem] rounded-r-[4rem]">
       <img src="/img/whatsapp.png" class="z-10 pointer w-8 h-8 my-auto ml-4" />
-      <p class="z-10 text-primary font-bold uppercase my-auto mr-2">Hubungi Kami</p>
+      <p class="z-10 text-primary font-bold uppercase my-auto mr-2 whitespace-nowrap">Hubungi Kami</p>
     </button>
   </a>
 </template>

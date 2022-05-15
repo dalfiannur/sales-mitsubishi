@@ -48,7 +48,7 @@ onMounted(() => {
 
 <template>
   <div class="fixed top-0 z-30 flex justify-center w-full bg-secondary border-b-8 border-accent">
-    <div class="relative flex items-center justify-between w-full h-16 mx-12 lg:mx-32">
+    <div class="relative flex items-center justify-between w-full h-20 mx-12 lg:mx-32">
       <a href="/" @click.prevent="$router.push('/')" class="flex items-center gap-5">
         <img src="/img/logo.png" class="h-10" />
         <h1 class="text-xl font-bold text-white uppercase">Mitsubishi</h1>

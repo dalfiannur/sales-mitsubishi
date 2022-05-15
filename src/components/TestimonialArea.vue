@@ -12,7 +12,7 @@ const { data: testimonials } = usePaginationGetter<Testimonial>({
 
 const options = {
   gap: 30,
-  perView: 3,
+  perView: 5,
   hasArrows :true,
   hasBullet: true,
   breakpoints: {
@@ -20,10 +20,10 @@ const options = {
       perView: 1
     },
     800: {
-      perView: 2
+      perView: 3
     },
     1200: {
-      perView: 3
+      perView: 5
     }
   }
 }
@@ -33,7 +33,7 @@ const options = {
   <div class="w-full py-10 bg-primary">
     <h5 class="text-4xl font-bold text-center text-secondary">Testimoni Pelanggan</h5>
     <div class="flex justify-center gap-5 mt-10">
-      <div class="w-full max-w-screen-lg px-5">
+      <div class="w-full px-20">
         <Slider id="testimonial-carousel" :items="testimonials" :options="options">
           <template #item="{ item, classes }">
             <li :class="classes">
