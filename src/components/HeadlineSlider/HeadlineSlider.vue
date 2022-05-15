@@ -75,7 +75,7 @@ onBeforeUnmount(function () {
 
 <template>
   <div class="flex justify-center">
-    <div class="relative w-full h-[750px] overflow-hidden">
+    <div class="relative w-full h-[91vh] overflow-hidden">
       <SliderItem v-for="(item, index) in items" :key="`slide-${index}`" :data=item :current-slide="currentSlide"
         :index="index" :direction="direction"></SliderItem>
       <SliderButton @prev="prev" @next="next"></SliderButton>
