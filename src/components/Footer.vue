@@ -1,6 +1,14 @@
 <template>
-  <div class="flex justify-center py-10 md:py-20 sm:pb-4 bg-secondary border-t-8 !border-accent">
-    <div class="flex flex-col justify-between w-full max-w-screen-lg md:flex-row">
+  <div class="w-full justify-center items-center text-secondary text-center mt-8">
+    <h1 class="text-4xl font-bold">Kontak</h1>
+    <img src="/img/foto.jpg" class="h-40 m-auto mt-8 mb-4 border-2 border-secondary" />
+    <div class="text-xl mb-8">
+      <h3>Susilila</h3>
+      <h3>Marketer Mitsubishi Jakarta </h3>
+    </div>
+  </div>
+  <div class="flex flex-col justify-center py-10 md:py-20 sm:pb-4 bg-secondary border-t-8 !border-accent">
+    <div class="flex flex-col justify-between w-full max-w-screen-lg md:flex-row m-auto">
       <div class="w-full md:w-fit">
         <div class="flex items-center justify-center gap-5 md:justify-start">
           <div class="flex items-center justify-center w-16 h-16">
@@ -43,4 +51,11 @@
       </div>
     </div>
   </div>
+
+  <a class="z-10 pointer" href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
+    <button class="z-10 flex pointer fixed w-[9rem] h-[5.7rem] bg-green-500 shadow-lg bottom-24 right-16" style="border-radius: 50%">
+      <img src="/img/whatsapp.png" class="z-10 pointer w-8 h-8 my-auto ml-4" />
+      <p class="z-10 text-primary font-bold uppercase my-auto mr-2">Hubungi Kami</p>
+    </button>
+  </a>
 </template>
