@@ -26,6 +26,9 @@ const orderNewsBy = (order: string) => {
   }
 };
 
+const loadMoreNews = () => {
+  setPerPage(perPage.value + 5);
+};
 
 </script>
 <template>
@@ -43,6 +46,10 @@ const orderNewsBy = (order: string) => {
       </div>
       <div class="grid grid-cols-1 gap-10 mt-10 md:grid-cols-5 px-20">
         <NewsCard v-for="item in newsList" :key="item.slug" :data="item" />
+      </div>
+
+      <div class="flex justify-center mt-10">
+        <Button @click="loadMoreNews">Tampilkan Lebih Banyak</Button>
       </div>
 
       <!-- <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">

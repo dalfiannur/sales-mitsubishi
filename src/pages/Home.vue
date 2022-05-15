@@ -57,6 +57,10 @@ useMeta({
                 <span class="hidden text-sm md:block">+62 812 906 717 67</span>
               </a>
             </div>
+
+            <div class="mt-10 text-sm">
+              Jalan Gatot Subroto No.Kav.50-52, Petamburan, Kec. Tanah Abang, Jakarta Pusat 10260 
+            </div>
           </div>
         </div>
       </div>
