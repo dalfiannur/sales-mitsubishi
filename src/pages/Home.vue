@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import Map from '../components/Map.vue'
 import useMeta from "../composable/useMeta";
 // @ts-ignore
 import Button from "../components/Button.vue";
-// @ts-ignore
-import Map from "../components/Map.vue";
 // @ts-ignore
 import TestimonialArea from "../components/TestimonialArea.vue";
 // @ts-ignore
@@ -33,15 +32,25 @@ useMeta({
     <section>
       <TestimonialArea />
     </section>
-    <div class="relative flex justify-end bg-white">
-      <div class="w-full static z-[1]">
-        <a
-          href="https://www.google.com/maps/place/Mitsubishi+DIPO+Slipi+Gatot+Subroto/@-6.2028699,106.7997685,15.9z/data=!4m5!3m4!1s0x2e69f79e50f8af2d:0xc86ce89d3f24d675!8m2!3d-6.2032859!4d106.8012544" target="_blank">
-          <Map/>
-        </a>
+    <div id="kontak" class="grid grid-cols-3 p-5 gap-5">
+      <div class="flex-1 text-secondary text-center">
+        <div class="flex shadow-md border rounded-md p-5 h-full gap-5">
+          <div class="w-[40%] flex">
+            <img src="/img/foto.jpg" class="w-full object-cover aspect-square rounded-lg" />
+          </div>
+
+          <div class="text-xl flex-1">
+            <h3>Susilila</h3>
+            <h3>Marketer Mitsubishi Jakarta </h3>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 col-span-2">
+        <div class="border rounded-lg overflow-hidden">
+          <Map />
+        </div>
       </div>
     </div>
-    <section id="kontak"></section>
   </div>
 </template>
 

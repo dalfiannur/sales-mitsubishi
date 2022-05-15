@@ -1,12 +1,4 @@
 <template>
-  <div class="w-full justify-center items-center text-secondary text-center mt-8">
-    <h1 class="text-4xl font-bold">Kontak</h1>
-    <img src="/img/foto.jpg" class="h-40 m-auto mt-8 mb-4 border-2 border-secondary" />
-    <div class="text-xl mb-8">
-      <h3>Susilila</h3>
-      <h3>Marketer Mitsubishi Jakarta </h3>
-    </div>
-  </div>
   <div class="flex flex-col justify-center py-10 md:py-20 sm:pb-4 bg-secondary border-t-8 !border-accent">
     <div class="flex flex-col justify-between w-full max-w-screen-lg md:flex-row m-auto">
       <div class="w-full md:w-fit">
@@ -24,7 +16,7 @@
           <br /> (Samping Gedung Dipo Tower Slipi), <br />Jakarta Pusat - 10260 Indonesia
         </div>
       </div>
-      <div
+      <!-- <div
         class="fixed bottom-0 left-0 z-20 flex items-center justify-center w-full px-4 py-4 border-t-4 md:border-accent md:border-0 bg-secondary md:bg-transparent md:px-0 mt-14 md:mt-0 md:w-fit md:relative">
         <div class="flex flex-row items-center justify-around w-full md:flex-col">
           <a href="tel:0215709057" class="flex items-center gap-3">
@@ -41,21 +33,21 @@
             <span class="hidden text-sm text-white md:block">+62 812 906 717 67</span>
           </a>
         </div>
-      </div>
+      </div> -->
       <div class="flex justify-center px-4 my-10 md:my-0 md:mt-0 md:px-0">
         <div class="flex flex-col items-center justify-end text-white md:items-end w-fit">
           <p class="text-sm text-right">Copyright &copy; 2022</p>
           <p class="mt-5 text-xs">Supported by</p>
-          <a href="#" class="text-xs uppercase">Padjajaran Technology</a>
+          <a href="#" class="text-xs uppercase">Enterpraise</a>
         </div>
       </div>
     </div>
   </div>
 
   <a class="z-10 pointer" href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
-    <button class="z-10 flex pointer fixed w-[9rem] h-[5.7rem] bg-green-500 shadow-lg bottom-24 right-16" style="border-radius: 50%">
+    <button class="z-10 flex gap-5 px-5 pointer fixed h-[4rem] bg-green-500 shadow-lg bottom-24 right-16 rounded-l-[4rem] rounded-r-[4rem]">
       <img src="/img/whatsapp.png" class="z-10 pointer w-8 h-8 my-auto ml-4" />
-      <p class="z-10 text-primary font-bold uppercase my-auto mr-2">Hubungi Kami</p>
+      <p class="z-10 text-primary font-bold uppercase my-auto mr-2 whitespace-nowrap">Hubungi Kami</p>
     </button>
   </a>
 </template>
