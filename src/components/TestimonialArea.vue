@@ -13,6 +13,7 @@ const { data: testimonials } = usePaginationGetter<Testimonial>({
 const options = {
   gap: 30,
   perView: 3,
+  hasArrows :true,
   hasBullet: true,
   breakpoints: {
     600: {

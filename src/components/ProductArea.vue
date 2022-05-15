@@ -26,7 +26,7 @@ const options = {
       perView: 3
     },
     1200: {
-      perView: 5
+      perView: 4
     }
   }
 }
@@ -37,14 +37,14 @@ const loadMoreProduct = () => {
 </script>
 
 <template>
-  <div id="produk" class="relative flex flex-col items-center justify-center pt-10 pb-10 bg-primary">
-    <div class="absolute z-[1] top-0 left-0 clip-3 h-full w-full bg-secondary" />
-    <div class="flex items-end justify-between w-full max-w-screen-lg static z-[2] px-4">
+  <div id="produk" class="relative flex flex-col items-center justify-center pt-10 pb-10 bg-secondary">
+    <div class="absolute z-[1] top-0 left-0 h-full w-full bg-secondary" />
+    <div class="flex items-center justify-center w-full max-w-screen-lg static z-[2] px-4">
       <div>
-        <h5 class="text-3xl font-bold text-white">Produk Kami</h5>
+        <h5 class="text-3xl font-bold text-primary">Produk Kami</h5>
       </div>
     </div>
-    <div class="z-10 w-full px-5 mt-10">
+    <div class="z-10 w-full max-w-screen-lg px-5 mt-10">
       <Slider id="product-slider" :items="products" :options="options">
         <template #item="{ item, classes }">
           <li :class="classes">
