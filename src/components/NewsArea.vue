@@ -4,6 +4,7 @@ import Button from './Button.vue';
 import NewsCard from './NewsCard.vue'
 import { News } from '../typings/News';
 
+
 const {
   data: newsList,
   perPage,
@@ -27,7 +28,10 @@ const orderNewsBy = (order: string) => {
 };
 
 const loadMoreNews = () => {
-  setPerPage(perPage.value + 3);
+  setPerPage(perPage.value + 5);
+};
+const loadLessNews = () => {
+  setPerPage(perPage.value - 5);
 };
 
 </script>
@@ -48,8 +52,15 @@ const loadMoreNews = () => {
         <NewsCard v-for="item in newsList" :key="item.slug" :data="item" />
       </div>
 
-      <div class="flex justify-center mt-10">
+      <div class="card-footer pb-0 pt-3">
+            <jw-pagination :items="totalPage"></jw-pagination>
+      </div>
+
+      <div v-if="perPage < 10" class="flex justify-center mt-10">
         <Button @click="loadMoreNews">Tampilkan Lebih Banyak</Button>
+      </div>
+      <div v-if="perPage === 10" class="flex justify-center mt-10">
+        <Button @click="loadLessNews">Tampilkan Lebih Sedikit</Button>
       </div>
       
     </div>

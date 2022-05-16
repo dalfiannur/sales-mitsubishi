@@ -34,14 +34,33 @@ useMeta({
     </section>
     <div id="kontak" class="grid grid-cols-3 p-5 gap-5">
       <div class="flex-1 text-secondary text-center">
-        <div class="flex shadow-md border rounded-md p-5 h-full gap-5">
+        <div class="flex border rounded-md p-5 h-full gap-5">
           <div class="w-[40%] flex">
             <img src="/img/foto.jpg" class="w-full object-cover aspect-square rounded-lg" />
           </div>
 
           <div class="text-xl flex-1">
-            <h3>Susilila</h3>
-            <h3>Marketer Mitsubishi Jakarta </h3>
+            <h3 class="text-md">Marketer Mitsubishi Jakarta </h3>
+            <h3 class="text-2xl font-bold mt-5">Susi Rahim</h3>
+            <div class="mt-10">
+              <a href="tel:0215709057" class="flex items-center gap-3">
+                <img src="/img/phone.png" class="w-7 h-7" />
+                <span class="hidden text-sm md:block">021-570 9057</span>
+              </a>
+              <a href="mail:susilila168@gmail.com" class="flex items-center gap-3 mt-0 md:mt-3">
+                <img src="/img/gmail.png" class="w-7 h-7" />
+                <span class="hidden text-sm  md:block">susilila168@gmail.com</span>
+              </a>
+              <a href="https://wa.me/6281290671767?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil"
+                target="__blank" class="flex items-center gap-3 mt-0 md:mt-3">
+                <img src="/img/whatsapp.png" class="w-7 h-7" />
+                <span class="hidden text-sm md:block">+62 812 906 717 67</span>
+              </a>
+            </div>
+
+            <div class="mt-10 text-sm">
+              Jalan Gatot Subroto No.Kav.50-52, Petamburan, Kec. Tanah Abang, Jakarta Pusat 10260 
+            </div>
           </div>
         </div>
       </div>
