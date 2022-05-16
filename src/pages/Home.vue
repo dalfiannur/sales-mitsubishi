@@ -31,7 +31,7 @@ useMeta({
     <section>
       <TestimonialArea />
     </section>
-    <div id="kontak">
+    <div class="mb-12" id="kontak">
     </div>
   </div>
 </template>
