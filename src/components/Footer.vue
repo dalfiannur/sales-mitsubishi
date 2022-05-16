@@ -95,9 +95,9 @@ import Map from "../components/Map.vue";
 
   <a class="z-10 pointer" href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
     <button
-      class="z-10 flex gap-5 px-5 pointer fixed h-[4rem] bg-green-500 shadow-lg bottom-24 right-16 rounded-l-[4rem] rounded-r-[4rem]">
-      <img src="/img/whatsapp.png" class="z-10 pointer w-8 h-8 my-auto ml-4" />
-      <p class="z-10 text-primary font-bold uppercase my-auto mr-2 whitespace-nowrap">Hubungi Kami</p>
+      class="z-10 flex gap-4 px-4 sm:px-5 pointer fixed h-[4.5rem] bg-green-500 shadow-lg bottom-8 sm:bottom-24 right-8 sm:right-16 rounded-l-[4rem] rounded-r-[4rem]">
+      <img src="/img/whatsapp.png" class="z-10 pointer w-10 h-10 my-auto sm:ml-2" />
+      <p class="z-10 hidden sm:block text-primary font-bold uppercase my-auto mr-2 whitespace-nowrap">Hubungi Kami</p>
     </button>
   </a>
 </template>

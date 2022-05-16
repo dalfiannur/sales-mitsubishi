@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Map from '../components/Map.vue'
 import useMeta from "../composable/useMeta";
 // @ts-ignore
 import Button from "../components/Button.vue";
