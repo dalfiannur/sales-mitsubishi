@@ -10,28 +10,7 @@ type NavigatorLink = {
   path: string;
 };
 
-const navigatorLinks: NavigatorLink[] = [
-  {
-    text: "Beranda",
-    path: "/",
-  },
-  {
-    text: "Produk",
-    path: "#produk",
-  },
-  {
-    text: "Artikel",
-    path: "#artikel",
-  },
-  {
-    text: "Pengajuan Kredit",
-    path: "https://wa.me/6281290671767?text=Hai,%20Saya%20ingin%20mengajukan%20kredit",
-  },
-  {
-    text: "Kontak",
-    path: "#kontak",
-  }
-];
+const baseUrl = window.location.origin
 
 onMounted(() => {
   if (window.innerWidth > 768) {
@@ -53,16 +32,18 @@ onMounted(() => {
         <img src="/img/logo.png" class="h-10" />
         <h1 class="text-xl font-bold text-white uppercase">Mitsubishi</h1>
       </a>
-
       <div>
         <Button class="block md:hidden" @click="show = !show">Menu</Button>
         <Transition name="slide-fade">
           <div v-show="show"
             class="absolute left-0 w-full gap-5 p-4 shadow md:relative bg-primary md:bg-transparent top-16 md:top-0">
             <ul class="flex flex-col gap-5 lg:gap-8 md:flex-row">
-              <li v-for="link in navigatorLinks" :key="link.text">
-                <a :href="link.path" class="font-semibold text-white">{{ link.text }}</a>
-              </li>
+              <a :href="`${baseUrl}/#`" class="font-semibold text-white">Beranda</a>
+              <a :href="`${baseUrl}/#produk`" class="font-semibold text-white">Produk</a>
+              <a :href="`${baseUrl}/#artikel`" class="font-semibold text-white">Artikel</a>
+              <a href="https://wa.me/6281290671767?text=Hai,%20Saya%20ingin%20mengajukan%20kredit" target="_blank"
+                class="font-semibold text-white">Pengajuan Kredit</a>
+              <a :href="`${baseUrl}/#kontak`" class="font-semibold text-white">Kontak</a>
             </ul>
           </div>
         </Transition>
