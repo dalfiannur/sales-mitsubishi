@@ -33,7 +33,7 @@ const options = {
   <div class="w-full py-10 bg-primary">
     <h5 class="text-4xl font-bold text-center text-secondary">Testimoni Pelanggan</h5>
     <div class="flex justify-center gap-5 mt-10">
-      <div class="w-full px-20">
+      <div class="w-full px-8 md:px-20">
         <Slider id="testimonial-carousel" :items="testimonials" :options="options">
           <template #item="{ item, classes }">
             <li :class="classes">
