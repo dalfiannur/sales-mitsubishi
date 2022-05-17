@@ -99,7 +99,7 @@ import Map from "../components/Map.vue";
   <a class="z-10 cursor-pointer" target="_blank"
     href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
     <button
-      class="z-10 flex gap-4 px-4 sm:px-5 pointer fixed h-[4.5rem] bg-green-500 shadow-lg bottom-8 sm:bottom-24 right-8 sm:right-16 rounded-l-[4rem] rounded-r-[4rem]">
+      class="z-10 flex gap-4 px-4 sm:px-5 pointer fixed h-[4.5rem] bg-green-500 shadow-lg bottom-8 sm:bottom-16 right-8 sm:right-16 rounded-l-[4rem] rounded-r-[4rem]">
       <img src="/img/whatsapp.png" class="z-10 pointer w-10 h-10 my-auto sm:ml-2" />
       <p class="z-10 hidden sm:block text-primary font-bold uppercase my-auto mr-2 whitespace-nowrap">Hubungi Kami</p>
     </button>
