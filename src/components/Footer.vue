@@ -36,13 +36,16 @@ import Map from "../components/Map.vue";
   </div>
 
   <div>
-    <div class="text-lg sm:text-xl font-bold text-center text-secondary mt-6">
-      Alamat Dealer
+    <div
+      class="z-20 relative top-0 sm:top-6 w-[350px] sm:w-[500px] md:w-[750px] bg-white shadow-md border rounded-md mx-auto">
+      <div class="text-lg sm:text-2xl font-bold text-center text-secondary mt-3">
+        Alamat Dealer
+      </div>
+      <div class="text-sm sm:text-lg text-center text-secondary mt-1 mx-1 sm:mx-2 mb-3">
+        Jalan Gatot Subroto No.Kav.50-52, Petamburan, Kec. Tanah Abang, Jakarta Pusat 10260
+      </div>
     </div>
-    <div class="text-sm sm:text-lg text-center text-secondary mt-1 mx-2 mb-4 ">
-      Jalan Gatot Subroto No.Kav.50-52, Petamburan, Kec. Tanah Abang, Jakarta Pusat 10260
-    </div>
-    <div class="relative flex justify-end bg-white">
+    <div class="relative z-10 flex justify-end bg-white -mt-[120px] md:-mt-[90px]">
       <div class="w-full static z-[1]">
         <a href="https://www.google.com/maps/place/Mitsubishi+DIPO+Slipi+Gatot+Subroto/@-6.2028699,106.7997685,15.9z/data=!4m5!3m4!1s0x2e69f79e50f8af2d:0xc86ce89d3f24d675!8m2!3d-6.2032859!4d106.8012544"
           target="_blank">
@@ -93,7 +96,8 @@ import Map from "../components/Map.vue";
     </div>
   </div>
 
-  <a class="z-10 cursor-pointer" target="_blank" href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
+  <a class="z-10 cursor-pointer" target="_blank"
+    href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
     <button
       class="z-10 flex gap-4 px-4 sm:px-5 pointer fixed h-[4.5rem] bg-green-500 shadow-lg bottom-8 sm:bottom-24 right-8 sm:right-16 rounded-l-[4rem] rounded-r-[4rem]">
       <img src="/img/whatsapp.png" class="z-10 pointer w-10 h-10 my-auto sm:ml-2" />
