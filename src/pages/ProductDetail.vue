@@ -7,6 +7,7 @@ import useEntityGetter from "../composable/useEntityGetter";
 import { Product } from "../typings/Product";
 import ProductCard from "../components/ProductCard.vue";
 import usePaginationGetter from "../composable/usePaginationGetter";
+import Map from '../components/Map.vue'
 
 const slug = ref<string>("");
 const selectedVariant = ref<number>(0);
@@ -104,8 +105,8 @@ watch(data, (val) => {
             </div>
           </div>
           <div class="mt-10 flex justify-end gap-5 px-10">
-            <a href="https://wa.me/6281290671767?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil"><Button>Hubungi Kami</Button></a>
-            <a href="https://wa.me/6281290671767?text=Hai,%20saya%20ingin%20mengajukan%20kredit"><Button>Ajukan Kredit</Button></a>
+            <a href="https://wa.me/6281290671767?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil" target="__blank"><Button>Hubungi Kami</Button></a>
+            <a href="https://wa.me/6281290671767?text=Hai,%20saya%20ingin%20mengajukan%20kredit" target="__blank"><Button>Ajukan Kredit</Button></a>
           </div>
         </div>
       </div>
@@ -118,4 +119,42 @@ watch(data, (val) => {
       </div>
     </div>
   </div>
+  <div id="kontak" class="grid grid-cols-3 p-5 gap-5">
+      <div class="flex-1 text-secondary text-center">
+        <div class="flex border rounded-md p-5 h-full gap-5">
+          <div class="w-[40%] flex">
+            <img src="/img/foto.jpg" class="w-full object-cover aspect-square rounded-lg" />
+          </div>
+
+          <div class="text-xl flex-1">
+            <h3 class="text-md">Marketer Mitsubishi Jakarta </h3>
+            <h3 class="text-2xl font-bold mt-5">Susi Rahim</h3>
+            <div class="mt-10">
+              <a href="tel:0215709057" class="flex items-center gap-3">
+                <img src="/img/phone.png" class="w-7 h-7" />
+                <span class="hidden text-sm md:block">021-570 9057</span>
+              </a>
+              <a href="mail:susilila168@gmail.com" class="flex items-center gap-3 mt-0 md:mt-3">
+                <img src="/img/gmail.png" class="w-7 h-7" />
+                <span class="hidden text-sm  md:block">susilila168@gmail.com</span>
+              </a>
+              <a href="https://wa.me/6281290671767?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil"
+                target="__blank" class="flex items-center gap-3 mt-0 md:mt-3">
+                <img src="/img/whatsapp.png" class="w-7 h-7" />
+                <span class="hidden text-sm md:block">+62 812 906 717 67</span>
+              </a>
+            </div>
+
+            <div class="mt-10 text-sm">
+              Jalan Gatot Subroto No.Kav.50-52, Petamburan, Kec. Tanah Abang, Jakarta Pusat 10260 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 col-span-2">
+        <div class="border rounded-lg overflow-hidden">
+          <Map />
+        </div>
+      </div>
+    </div>
 </template>

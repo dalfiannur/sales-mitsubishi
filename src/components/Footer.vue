@@ -28,7 +28,7 @@ import Map from "../components/Map.vue";
     </div>
   </div>
 
-  <a class="z-10 pointer" href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil">
+  <a class="z-10 pointer" href="https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil" target="__blank">
     <button
       class="z-10 flex gap-5 px-5 pointer fixed h-[4rem] bg-green-500 shadow-lg bottom-24 right-16 rounded-l-[4rem] rounded-r-[4rem]">
       <img src="/img/whatsapp.png" class="z-10 pointer w-8 h-8 my-auto ml-4" />

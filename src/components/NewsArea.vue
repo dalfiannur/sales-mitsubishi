@@ -3,6 +3,7 @@ import usePaginationGetter from '../composable/usePaginationGetter';
 import Button from './Button.vue';
 import NewsCard from './NewsCard.vue'
 import { News } from '../typings/News';
+import { METHODS } from 'http';
 
 
 const {
@@ -42,7 +43,7 @@ const loadLessNews = () => {
     <div class="w-full z-[2] md:px-0">
       <div class="flex flex-col justify-between">
         <div class="w-full text-4xl font-bold text-secondary text-center">Artikel</div>
-        <div class="flex gap-2 text-black justify-center">
+        <div class="flex gap-2 text-black justify-center mt-4">
           <a href="#" @click="orderNewsBy('latest')">Terbaru</a>
           <div>|</div>
           <a href="#" @click="orderNewsBy('popular')">Terpopuler</a>
@@ -52,15 +53,19 @@ const loadLessNews = () => {
         <NewsCard v-for="item in newsList" :key="item.slug" :data="item" />
       </div>
 
-      <div class="card-footer pb-0 pt-3">
-            <jw-pagination :items="totalPage"></jw-pagination>
-      </div>
-
       <div v-if="perPage < 10" class="flex justify-center mt-10">
         <Button @click="loadMoreNews">Tampilkan Lebih Banyak</Button>
       </div>
+      
       <div v-if="perPage === 10" class="flex justify-center mt-10">
         <Button @click="loadLessNews">Tampilkan Lebih Sedikit</Button>
+      </div>
+      <div v-if="perPage === 10" class="flex justify-center mt-5 gap-2">
+        <Button>&#60;</Button>
+        <Button>1</Button>
+        <Button>2</Button>
+        <Button>3</Button>
+        <Button>&#62;</Button>
       </div>
       
     </div>

@@ -26,7 +26,7 @@ const classes = reactive({
         :is="tag"
         class="block rounded btn-grad"
         :class="classes"
-        :href="href"
+        :href="href" 
         :target="target"
     >
         <slot />
