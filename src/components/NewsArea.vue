@@ -49,7 +49,7 @@ const loadLessNews = () => {
           <a href="#" @click="orderNewsBy('popular')">Terpopuler</a>
         </div>
       </div>
-      <div class="grid grid-cols-1 gap-10 mt-10 md:grid-cols-5 px-20">
+      <div class="grid grid-cols-1 gap-10 mt-10 md:grid-cols-5 px-8 md:px-20">
         <NewsCard v-for="item in newsList" :key="item.slug" :data="item" />
       </div>
 
