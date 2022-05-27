@@ -4,14 +4,15 @@ import Button from './Button.vue';
 import NewsCard from './NewsCard.vue'
 import { News } from '../typings/News';
 import { METHODS } from 'http';
+import Pagination from './Pagination/Pagination.vue';
 
 
 const {
   data: newsList,
   perPage,
   setPerPage,
-  currentPage,
   totalPage,
+  setPage,
   setOrder: setOrderNews,
 } = usePaginationGetter<News>({
   path: "news",
@@ -56,18 +57,12 @@ const loadLessNews = () => {
       <div v-if="perPage < 10" class="flex justify-center mt-10">
         <Button @click="loadMoreNews">Tampilkan Lebih Banyak</Button>
       </div>
-      
+
       <div v-if="perPage === 10" class="flex justify-center mt-10">
         <Button @click="loadLessNews">Tampilkan Lebih Sedikit</Button>
       </div>
-      <div v-if="perPage === 10" class="flex justify-center mt-5 gap-2">
-        <Button>&#60;</Button>
-        <Button>1</Button>
-        <Button>2</Button>
-        <Button>3</Button>
-        <Button>&#62;</Button>
-      </div>
-      
+      <Pagination :with-edges="true" :with-controls="true" :total="totalPage" :per-page="perPage" @change="setPage" />
+
     </div>
   </div>
 </template>
