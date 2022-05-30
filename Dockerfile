@@ -1,5 +1,17 @@
-FROM httpd:alpine
+FROM node:lts-alpine
 
-WORKDIR /usr/local/apache2/htdocs
+RUN npm install -g http-server
 
-ADD ./dist .
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+EXPOSE 8080
+
+CMD ["http-server", "dist"]
