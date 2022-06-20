@@ -37,15 +37,16 @@ import Map from "../components/Map.vue";
 
   <div>
     <div
-      class="z-20 relative top-0 sm:top-6 w-[350px] sm:w-[500px] md:w-[750px] bg-white shadow-md border rounded-md mx-auto">
+      class="z-20 relative top-0 sm:top-4 w-[350px] sm:w-[500px] md:w-[750px] bg-white shadow-md border rounded-md mx-auto">
       <div class="text-lg sm:text-2xl font-bold text-center text-secondary mt-3">
         Alamat Dealer
       </div>
       <div class="text-sm sm:text-lg text-center text-secondary mt-1 mx-1 sm:mx-2 mb-3">
-        Jalan Gatot Subroto No.Kav.50-52, Petamburan, Kec. Tanah Abang, Jakarta Pusat 10260
+        Alamat PT DIPO INTERNASIONAL PAHALA OTOMOTIF (MITSUBISHI DEALER)<br/>
+        Jln. Gotot subroto Kav 50-52 jakarta pusat (samping gedung dipo tower slipi)
       </div>
     </div>
-    <div class="relative z-10 flex justify-end bg-white -mt-[120px] md:-mt-[90px]">
+    <div class="relative z-10 flex justify-end bg-white -mt-[150px] md:-mt-[120px]">
       <div class="w-full static z-[1]">
         <a href="https://www.google.com/maps/place/Mitsubishi+DIPO+Slipi+Gatot+Subroto/@-6.2028699,106.7997685,15.9z/data=!4m5!3m4!1s0x2e69f79e50f8af2d:0xc86ce89d3f24d675!8m2!3d-6.2032859!4d106.8012544"
           target="_blank">
