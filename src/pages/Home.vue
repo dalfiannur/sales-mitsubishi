@@ -15,7 +15,7 @@ import HeadlineSlider from '../components/HeadlineSlider/HeadlineSlider.vue'
 const { data: mainBanners } = useHeadlineBanner();
 
 useMeta({
-  title: "Homepage",
+  title: "Mitsubishi Jakarta Pusat",
 });
 </script>
 
