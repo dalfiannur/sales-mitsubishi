@@ -119,7 +119,7 @@ watch(data, (val) => {
       </div>
     </div>
   </div>
-  <div id="kontak" class="grid grid-cols-3 p-5 gap-5">
+  <!-- <div id="kontak" class="grid grid-cols-3 p-5 gap-5">
       <div class="flex-1 text-secondary text-center">
         <div class="flex border rounded-md p-5 h-full gap-5">
           <div class="w-[40%] flex">
@@ -156,5 +156,5 @@ watch(data, (val) => {
           <Map />
         </div>
       </div>
-    </div>
+    </div> -->
 </template>
