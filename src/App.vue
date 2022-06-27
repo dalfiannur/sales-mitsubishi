@@ -4,7 +4,7 @@ import Layout from './layouts/Main.vue'
 
 <template>
   <Layout>
-    <router-view />
+    <router-view :key="$route.path" />
   </Layout>
 </template>
 
