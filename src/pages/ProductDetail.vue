@@ -39,6 +39,7 @@ useMeta({
 });
 
 onMounted(() => {
+  window.scrollTo(0, 0);
   slug.value = route.params.slug as string;
 });
 
