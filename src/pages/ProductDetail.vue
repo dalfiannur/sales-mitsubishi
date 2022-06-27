@@ -31,7 +31,7 @@ const generateWhatsappText = (type: any) => {
     "text",
     `Hallo, saya mau bertanya tentang ${data.value?.name} tipe ${type.name}`
   );
-  return "https://wa.me/6281280438004?" + query.toString();
+  return "https://wa.me/6281290671767?" + query.toString();
 };
 
 useMeta({

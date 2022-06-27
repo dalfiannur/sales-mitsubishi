@@ -12,7 +12,7 @@ export default function () {
                 subTitle: 'Penawaran Special untuk produk yang baru datang',
                 subTitle2: 'Diskon sampai dengan 15%.',
                 imageSource: '/img/background.webp',
-                buttonLink: 'https://wa.me/6281280438004?text=Hallo,%20saya%20mau%20bertanya%20tentang%20mobil'
+                buttonLink: 'https://wa.me/6281290671767?text=Hallo,%20Saya%20mau%20bertanya%20tentang%20mobil'
             })
         }
     })
