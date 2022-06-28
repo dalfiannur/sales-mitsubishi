@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted} from "vue";
 import useMeta from "../composable/useMeta";
 // @ts-ignore
 import Button from "../components/Button.vue";
@@ -16,6 +17,10 @@ const { data: mainBanners } = useHeadlineBanner();
 
 useMeta({
   title: "Mitsubishi Jakarta Pusat",
+});
+
+onMounted(() => {
+  window.scrollTo(0, 0);
 });
 </script>
 
